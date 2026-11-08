@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Issues Study Hub</title>
+<meta name="description" content="CGW4U study site: Unit 1 Perspective, Bias & the Media and Unit 2 Conflict & Cooperation — notes, flashcards and quizzes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f1e7; --surface:#fffdf8; --surface-2:#efe8da; --ink:#1d2433; --muted:#5d6577;
+  --line:#ddd3c1; --accent:#d98e04; --accent-ink:#7a4f00; --u1:#2f6f8f; --u2:#9c3d2e;
+  --good:#2e7d4f; --bad:#b3362a; --shadow:0 1px 2px rgba(29,36,51,.06),0 6px 24px rgba(29,36,51,.07);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#13171f; --surface:#1b212c; --surface-2:#242c39; --ink:#ebe6dc; --muted:#a3aab8;
+    --line:#323b4a; --accent:#f2b13a; --accent-ink:#f2b13a; --u1:#6fb3d4; --u2:#e0806f;
+    --good:#5cc489; --bad:#ef7a6e; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#13171f; --surface:#1b212c; --surface-2:#242c39; --ink:#ebe6dc; --muted:#a3aab8;
+  --line:#323b4a; --accent:#f2b13a; --accent-ink:#f2b13a; --u1:#6fb3d4; --u2:#e0806f;
+  --good:#5cc489; --bad:#ef7a6e; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(2rem,5vw,3.2rem)}
+h2{font-size:clamp(1.5rem,3.4vw,2rem)}
+h3{font-size:1.2rem;margin-top:1.6em}
+p{margin:0 0 1em}
+a{color:var(--accent-ink)}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;height:60px}
+.brand{font-family:Fraunces,serif;font-weight:700;font-size:1.15rem;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.brand .dot{width:12px;height:12px;border-radius:50%;background:var(--accent)}
+nav.tabs{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+.tab{border:0;background:none;color:var(--muted);padding:8px 12px;border-radius:999px;font-weight:600;font-size:.92rem;white-space:nowrap}
+.tab:hover{color:var(--ink);background:var(--surface-2)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.theme-btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:36px;height:36px;border-radius:50%;flex:none}
+@media (max-width:720px){
+  .top .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:8px}
+  nav.tabs{order:3;width:100%;margin-left:0}
+  .theme-btn{margin-left:auto}
+}
+
+main{padding:32px 0 80px}
+section.view{display:none}
+section.view.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* home */
+.hero{padding:24px 0 8px}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:640px}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;font-weight:700;color:var(--accent-ink)}
+.grid{display:grid;gap:16px}
+.grid.cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:28px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.card.link{cursor:pointer;transition:transform .15s}
+.card.link:hover{transform:translateY(-2px)}
+.card h3{margin-top:0}
+.card p{color:var(--muted);margin:0}
+.pill{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase}
+.pill.u1{background:color-mix(in srgb,var(--u1) 16%,transparent);color:var(--u1)}
+.pill.u2{background:color-mix(in srgb,var(--u2) 16%,transparent);color:var(--u2)}
+.stats{display:flex;gap:24px;flex-wrap:wrap;margin-top:28px}
+.stat b{display:block;font-family:Fraunces,serif;font-size:2rem}
+.stat span{color:var(--muted);font-size:.9rem}
+.bigq{margin-top:32px;border-left:4px solid var(--accent);padding:12px 20px;background:var(--surface);border-radius:0 12px 12px 0}
+.bigq p{margin:0;font-family:Fraunces,serif;font-size:1.2rem}
+
+/* notes */
+.notes-layout{display:grid;grid-template-columns:230px 1fr;gap:32px;align-items:start}
+.toc{position:sticky;top:84px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;font-size:.9rem;max-height:calc(100vh - 110px);overflow:auto}
+.toc b{display:block;margin-bottom:6px}
+.toc a{display:block;color:var(--muted);text-decoration:none;padding:4px 6px;border-radius:6px}
+.toc a:hover{background:var(--surface-2);color:var(--ink)}
+@media (max-width:820px){.notes-layout{grid-template-columns:1fr}.toc{position:static;max-height:none}}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:20px;scroll-margin-top:90px}
+.note h2{font-size:1.5rem}
+.note ul{padding-left:1.2em;margin:0 0 1em}
+.note li{margin-bottom:.35em}
+.key{background:color-mix(in srgb,var(--accent) 13%,transparent);border-radius:10px;padding:12px 16px;margin:12px 0;font-weight:500}
+.key::before{content:"Key idea — ";font-weight:700;color:var(--accent-ink)}
+.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.who div{background:var(--surface-2);border-radius:10px;padding:12px 14px}
+.who div b{display:block}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--surface-2)}
+.tablewrap{overflow-x:auto}
+blockquote{margin:12px 0;padding:8px 16px;border-left:3px solid var(--line);color:var(--muted);font-style:italic}
+.chain{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+.chain span{background:var(--surface-2);padding:6px 12px;border-radius:8px;font-weight:600;font-size:.9rem}
+.chain i{color:var(--accent-ink);font-style:normal;font-weight:700}
+
+/* toolbar / controls */
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:20px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 14px;border-radius:999px;font-weight:600;font-size:.88rem}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn{border:0;background:var(--ink);color:var(--bg);padding:11px 20px;border-radius:12px;font-weight:600}
+.btn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.btn.good{background:var(--good);color:#fff}
+.btn.warn{background:var(--bad);color:#fff}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+select{font:inherit;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.spacer{flex:1}
+.muted{color:var(--muted)}
+
+/* flashcards */
+.fc-stage{max-width:680px;margin:0 auto}
+.progress{height:6px;background:var(--surface-2);border-radius:99px;overflow:hidden;margin-bottom:14px}
+.progress i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.flip{perspective:1400px;height:340px;cursor:pointer;user-select:none}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.3,.7,.3,1);transform-style:preserve-3d}
+.flip.flipped .flip-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:auto}
+.face.back{transform:rotateY(180deg);background:var(--surface-2)}
+.face .term{font-family:Fraunces,serif;font-size:clamp(1.4rem,4vw,2rem);font-weight:700}
+.face .def{font-size:1.05rem;line-height:1.55}
+.face .meta{position:absolute;top:14px;left:18px;right:18px;display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted)}
+.face .hint{position:absolute;bottom:14px;font-size:.78rem;color:var(--muted)}
+.fc-actions{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.fc-count{text-align:center;color:var(--muted);font-size:.9rem;margin-top:12px}
+.empty{text-align:center;padding:48px 16px;color:var(--muted)}
+
+/* quiz */
+.quiz-box{max-width:720px;margin:0 auto}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+.qtop{display:flex;justify-content:space-between;font-size:.85rem;color:var(--muted);margin-bottom:10px}
+.qtext{font-family:Fraunces,serif;font-size:1.3rem;margin-bottom:18px}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);padding:12px 16px;border-radius:12px;font-size:1rem;display:flex;gap:12px;align-items:flex-start}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt .k{flex:none;width:26px;height:26px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;font-weight:700;font-size:.8rem}
+.opt.correct{border-color:var(--good);background:color-mix(in srgb,var(--good) 12%,var(--surface))}
+.opt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 10%,var(--surface))}
+.opt:disabled{cursor:default}
+.explain{margin-top:16px;padding:14px 16px;border-radius:12px;background:var(--surface-2);display:none}
+.explain.show{display:block}
+.explain b.ok{color:var(--good)} .explain b.no{color:var(--bad)}
+.qnav{display:flex;justify-content:flex-end;margin-top:16px}
+.setup label{display:block;font-weight:600;margin:14px 0 6px}
+.score-big{font-family:Fraunces,serif;font-size:3.5rem;font-weight:700;text-align:center}
+.review-item{border-top:1px solid var(--line);padding:14px 0}
+.review-item p{margin:.2em 0}
+
+/* worksheet */
+.ws-q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:12px}
+.ws-q h4{margin:0 0 6px;font-size:1.02rem}
+.ws-q .prompt{color:var(--muted);font-size:.92rem;margin:0}
+.ws-q textarea{width:100%;min-height:80px;margin-top:10px;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:.95rem;resize:vertical}
+.ws-q details{margin-top:10px}
+.ws-q summary{cursor:pointer;font-weight:600;color:var(--accent-ink)}
+.ws-q details div{margin-top:8px;padding:12px 14px;background:var(--surface-2);border-radius:10px}
+.ws-q details ul{margin:.3em 0 .3em;padding-left:1.2em}
+.ws-part{margin:28px 0 12px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span>World Issues Study Hub</div>
+    <nav class="tabs" role="tablist">
+      <button class="tab" data-view="home" aria-selected="true">Home</button>
+      <button class="tab" data-view="unit1">Unit 1 Notes</button>
+      <button class="tab" data-view="unit2">Unit 2 Notes</button>
+      <button class="tab" data-view="flash">Flashcards</button>
+      <button class="tab" data-view="quiz">Quiz</button>
+      <button class="tab" data-view="review">Review Sheet</button>
+    </nav>
+    <button class="theme-btn" id="themeBtn" title="Toggle dark mode" aria-label="Toggle dark mode">◐</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ================= HOME ================= -->
+<section class="view active" id="home">
+  <div class="hero">
+    <div class="eyebrow">CGW4U · Canadian &amp; World Issues</div>
+    <h1>Study smarter for World Issues.</h1>
+    <p class="lead">Everything from Unit 1 (Perspective, Bias &amp; the Media) and Unit 2 (Conflict &amp; Cooperation) in one place: read the notes, drill the flashcards, then test yourself with the quiz and the review sheet.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b id="statCards">0</b><span>flashcards</span></div>
+    <div class="stat"><b id="statQs">0</b><span>quiz questions</span></div>
+    <div class="stat"><b id="statKnown">0</b><span>cards you've mastered</span></div>
+  </div>
+  <div class="grid cards">
+    <div class="card link" data-go="unit1"><span class="pill u1">Unit 1</span><h3>Perspective, Bias &amp; the Media</h3><p>Where perspectives come from, steelmanning, lateral reading, Said, McLuhan, Hall, Chomsky, and types of bias.</p></div>
+    <div class="card link" data-go="unit2"><span class="pill u2">Unit 2</span><h3>Conflict &amp; Cooperation</h3><p>Causes of conflict, Russia–Ukraine, Israel–Palestine, climate, terrorism, game theory, realism vs liberalism, the UN.</p></div>
+    <div class="card link" data-go="flash"><span class="pill u1">Practice</span><h3>Flashcards</h3><p>Flip, shuffle, filter by unit, and mark cards as known. Your progress stays saved in this browser.</p></div>
+    <div class="card link" data-go="quiz"><span class="pill u2">Test</span><h3>Quiz</h3><p>Multiple choice with instant explanations. Retry only the ones you missed.</p></div>
+    <div class="card link" data-go="review"><span class="pill u2">Unit 2</span><h3>Review Sheet</h3><p>Every question from the Unit 2 review worksheet. Write your answer, then compare with a model answer.</p></div>
+  </div>
+  <div class="bigq"><span class="eyebrow">Unit 2 core question</span><p>Is conflict inevitable in an anarchic world, or can cooperation and institutions restrain power?</p></div>
+</section>
+
+<!-- ================= UNIT 1 ================= -->
+<section class="view" id="unit1">
+  <span class="pill u1">Unit 1</span>
+  <h1>Perspective, Bias &amp; the Media</h1>
+  <p class="muted">Big idea: everyone sees the world through a lens. Good thinkers know where their lens comes from, understand other people's, and question who is telling the story.</p>
+  <div class="notes-layout">
+    <aside class="toc"><b>On this page</b>
+      <a href="#u1-perspective">Where perspectives come from</a>
+      <a href="#u1-pov">Why point of view matters</a>
+      <a href="#u1-empathy">Hard empathy, strawman &amp; steelman</a>
+      <a href="#u1-facts">Facts vs opinions</a>
+      <a href="#u1-reading">Vertical vs lateral reading</a>
+      <a href="#u1-single">The single story (Adichie)</a>
+      <a href="#u1-said">VIP #1 Edward Said</a>
+      <a href="#u1-mcluhan">VIP #2 Marshall McLuhan</a>
+      <a href="#u1-hall">VIP #3 Stuart Hall</a>
+      <a href="#u1-chomsky">VIP #4 Noam Chomsky</a>
+      <a href="#u1-bias">Our own biases</a>
+    </aside>
+    <div>
+      <article class="note" id="u1-perspective">
+        <h2>Where our perspectives come from</h2>
+        <ul>
+          <li><b>Socio-economic status (SES):</b> a measure of a person's or group's position in a community, based on things like parents' occupations, income, education and neighbourhood.</li>
+          <li><b>Life experiences:</b> gender, ethnicity, age, religion and other factors shape the experiences we have.</li>
+          <li>Perspectives <b>can and do change</b> as people live through new experiences or get older.</li>
+          <li>People aren't consistent "teams": someone can hold a <b>left-wing</b> view on one issue and a very different view on another (the political spectrum is issue by issue).</li>
+        </ul>
+      </article>
+      <article class="note" id="u1-pov">
+        <h2>Why point of view matters</h2>
+        <ul>
+          <li><b>Better understanding:</b> helps us understand the opinions, beliefs and values of others.</li>
+          <li><b>Conflict resolution:</b> looking for differing views helps settle arguments.</li>
+          <li><b>Including others:</b> asking which viewpoints are represented and which are <i>missing</i> makes our thinking more inclusive.</li>
+        </ul>
+        <h3>Stakeholders: the Downtown Guelph encampments example</h3>
+        <p>A <b>stakeholder</b> is anyone affected by, or with an interest in, an issue. For downtown encampments the stakeholders included business owners, downtown citizens, people experiencing homelessness, and city council / the mayor. For each, ask: what's their rationale, how useful is their view, and where can you get more info on it?</p>
+      </article>
+      <article class="note" id="u1-empathy">
+        <h2>Hard empathy, strawman &amp; steelman</h2>
+        <p><b>Easy empathy</b> is understanding people who already think like you. <b>Hard empathy</b> is understanding a perspective you find frustrating <i>without excusing or agreeing with it</i>. You don't have to agree with someone to understand them.</p>
+        <div class="tablewrap"><table>
+          <tr><th>Strawman</th><th>Steelman</th></tr>
+          <tr><td>Make the other side's argument <b>weaker</b> so it's easier to attack. It's what happens when we skip hard empathy.</td><td>Explain the other side's argument in its <b>strongest, fairest</b> form, even if you disagree. It's hard empathy in action.</td></tr>
+          <tr><td>"They're just stupid." "They don't care about people." "They want to ruin the country."</td><td>"I understand why someone might think that because…" "A fair concern they have is…" "The strongest version of their point is…"</td></tr>
+          <tr><td>Shuts down discussion, creates division, you learn nothing, you stay in your bubble.</td><td>Builds hard empathy, shows maturity, helps you understand the real issue, and makes <i>your own</i> arguments better.</td></tr>
+        </table></div>
+        <div class="key">Steelmanning is empathy for someone's <i>reasoning</i>, not necessarily their <i>conclusion</i>. A good steelman also needs the best evidence.</div>
+        <p class="muted">Class practice topics: school uniforms; should Canada increase military spending?</p>
+      </article>
+      <article class="note" id="u1-facts">
+        <h2>Facts vs opinions</h2>
+        <div class="who">
+          <div><b>Facts are OBJECTIVE</b>Indisputable, concrete truths that can be verified by accurate observation and measurement. Your personal experience can't change them.</div>
+          <div><b>Opinions are SUBJECTIVE</b>Beliefs you hold about events. They develop when you consider the facts in light of your values, so they come from your perspective.</div>
+        </div>
+      </article>
+      <article class="note" id="u1-reading">
+        <h2>Being a critical news consumer: vertical vs lateral reading</h2>
+        <p>Class activity: American <b>Academy</b> of Pediatrics vs American <b>College</b> of Pediatricians. The names sound almost identical, but they are very different organizations.</p>
+        <ul>
+          <li><b>Vertical reading:</b> judging a source by staying on its own website (scrolling, reading its "About" page, how professional it looks). This is easy to fool.</li>
+          <li><b>Lateral reading:</b> leaving the site and opening <b>other tabs</b> to see what independent sources say about who's behind it. This is what professional fact-checkers do.</li>
+        </ul>
+        <div class="key">Don't judge a source by how it describes itself. Check what others say about it.</div>
+      </article>
+      <article class="note" id="u1-single">
+        <h2>The danger of a single story (Chimamanda Ngozi Adichie)</h2>
+        <ul>
+          <li>A <b>single story</b> is when the same story is told over and over about a people or place we don't know first-hand (e.g., "Africa" = poverty, safari, war).</li>
+          <li>The danger: it creates <b>stereotypes</b>. "The problem with stereotypes is not that they are untrue, but that they are incomplete": half-truths, not the full truth.</li>
+          <li><b>Power</b> is the ability not just to tell a story, but to make it the <i>definitive</i> story. This links to race, gender and class.</li>
+          <li>The fix: seek a <b>balance of stories</b>.</li>
+        </ul>
+        <p><b>Historical examples of the single story:</b></p>
+        <ul>
+          <li><b>John Locke (1561):</b> a London merchant who sailed to West Africa and described Black Africans as "beasts who have no houses" and "people without heads, having their mouths and eyes in their breasts."</li>
+          <li><b>Rudyard Kipling:</b> a prominent writer of the British Imperial era whose work portrayed the Empire as a civilizing force (the imperialist mindset).</li>
+          <li><b>Modern pop culture:</b> Western films and media that keep repeating the same images of other regions.</li>
+        </ul>
+      </article>
+      <article class="note" id="u1-said">
+        <h2>VIP #1 · Edward Said: <i>Orientalism</i></h2>
+        <p>Palestinian-American intellectual, literary theorist and cultural critic (1935–2003).</p>
+        <ul>
+          <li>His book <b><i>Orientalism</i></b> critically examines how Western scholarship and culture represented the Middle East, Asia and "the Orient."</li>
+          <li>He argued the West depicted the East as <b>exotic, inferior and "the Other"</b>, which helped justify colonial and imperialist ideas.</li>
+          <li>He urges us to question the sources of knowledge and how <b>power and ideology</b> shape the narratives we receive.</li>
+        </ul>
+        <div class="key">Media and literature often show "the Other" in stereotyped, biased ways. These misrepresentations cause real-world harm, so Western-centric views need to be challenged.</div>
+        <p class="muted">Guiding question: How do media representations shape how we see people from other parts of the world?</p>
+      </article>
+      <article class="note" id="u1-mcluhan">
+        <h2>VIP #2 · Marshall McLuhan: "The medium is the message"</h2>
+        <ul>
+          <li>The <b>medium</b> (how information is delivered) has a profound impact on how we perceive the message, often more than the content itself.</li>
+          <li>Media technologies aren't just channels. They <b>shape human behaviour and society</b>.</li>
+          <li>Shifts from one medium to another (print → TV → internet) have <b>cumulative effects</b> on society.</li>
+          <li>Famous quote: <b>"We shape our tools and thereafter our tools shape us."</b></li>
+        </ul>
+        <h3>Speed of adoption (time to reach 100 million users)</h3>
+        <div class="tablewrap"><table>
+          <tr><th>Technology</th><th>Time</th></tr>
+          <tr><td>Telephone</td><td>75 years</td></tr><tr><td>Mobile phone</td><td>16 years</td></tr>
+          <tr><td>World Wide Web</td><td>7 years</td></tr><tr><td>Twitter</td><td>5 years</td></tr>
+          <tr><td>Facebook</td><td>4.5 years</td></tr><tr><td>WhatsApp</td><td>3 years 4 months</td></tr>
+          <tr><td>TikTok</td><td>9 months</td></tr><tr><td>ChatGPT</td><td>2 months</td></tr>
+        </table></div>
+        <h3>Questions to ask about any medium</h3>
+        <ul><li>What habits or behaviours does it encourage?</li><li>How does it change the way we access information?</li><li>Does it shape power dynamics (who controls the narrative)?</li></ul>
+        <h3>Social media as McLuhan's theory in action</h3>
+        <ul>
+          <li><b>Algorithm-driven feeds:</b> personalize content based on behaviour, so the medium shapes our experience.</li>
+          <li><b>Notifications &amp; the "like" button:</b> dopamine hits that condition us to seek quick validation and build addictive habits.</li>
+          <li><b>Stories &amp; short-form video:</b> push brief, surface-level engagement over deep reflection, which shortens attention spans.</li>
+        </ul>
+        <p><b>Art as a medium · Chris Hondros:</b> a war photographer whose images show how photography can carry emotional impact that articles or documentaries may not. That's McLuhan's point: the <i>form</i> changes how we feel the story.</p>
+        <p><b>Information overload:</b> an abundance of information means the truth often loses. See also <i>The Social Dilemma</i> and confirmation bias.</p>
+      </article>
+      <article class="note" id="u1-hall">
+        <h2>VIP #3 · Stuart Hall: Encoding &amp; Decoding</h2>
+        <ul>
+          <li><b>Encoding:</b> producers of content (news, TV, ads) embed meanings and values that reflect certain ideologies or viewpoints.</li>
+          <li><b>Decoding:</b> the audience interprets the message. They are <i>not passive</i>: they decode based on their own experiences, social position and cultural background.</li>
+          <li><b>Cultural identity</b> is a "lens" through which we view everything.</li>
+          <li>Media doesn't just <b>reflect</b> the world; it helps <b>shape</b> our ideas.</li>
+        </ul>
+        <h3>Three types of decoding</h3>
+        <div class="who">
+          <div><b>Dominant (preferred)</b>Audience accepts the message exactly as the producer intended.</div>
+          <div><b>Negotiated</b>Audience partly accepts the message but modifies or resists parts of it based on their own experience.</div>
+          <div><b>Oppositional</b>Audience rejects the encoded message and reads it in a completely different or opposite way.</div>
+        </div>
+        <p>Ways meaning gets encoded: word choice / <b>language</b> in headlines, and <b>under-reporting / gatekeeping</b> (deciding which stories get covered at all).</p>
+        <div class="key">Media messages aren't "one size fits all". Different audiences decode them differently, and media can both reflect and reinforce stereotypes.</div>
+      </article>
+      <article class="note" id="u1-chomsky">
+        <h2>VIP #4 · Noam Chomsky: <i>Manufacturing Consent</i></h2>
+        <p>MIT professor, historian, social critic and activist; co-author of <i>Manufacturing Consent</i> (with Edward S. Herman).</p>
+        <ul>
+          <li>In a democracy, control <b>can't be imposed by force</b>, so limits are placed on democracy through subtle means: the media.</li>
+          <li>Core idea: the media doesn't inform citizens impartially. It <b>manufactures consent</b> for the interests of powerful elites (corporations, government, influential groups).</li>
+          <li><b>The Propaganda Model:</b> media can work as a propaganda system that looks independent and objective but advances the agendas of the powerful, especially during military conflict.</li>
+        </ul>
+        <h3>The 5 filters of editorial bias</h3>
+        <div class="tablewrap"><table>
+          <tr><th>#</th><th>Filter</th><th>Simplified</th><th>Example</th></tr>
+          <tr><td>1</td><td><b>Media ownership</b></td><td>Big corporations own most media, and their goal is profit. Owners' interests shape the news.</td><td>A network owned by a weapons maker downplays stories critical of the arms industry. (e.g., Rupert Murdoch's media empire)</td></tr>
+          <tr><td>2</td><td><b>Advertising revenue</b></td><td>Media depends on advertisers, so it avoids stories that upset them.</td><td>An outlet funded by fast-food ads avoids stories on fast food's health harms.</td></tr>
+          <tr><td>3</td><td><b>Sourcing</b></td><td>Journalists rely on "official", authoritative sources (government, corporations), which favours those in power.</td><td>War coverage that mostly quotes military/government sources, not people on the ground.</td></tr>
+          <tr><td>4</td><td><b>Flak &amp; fear of backlash</b></td><td>Criticism, lawsuits, boycotts or PR attacks discourage critical reporting.</td><td>An oil company threatens lawsuits and pulls ads after a critical news segment.</td></tr>
+          <tr><td>5</td><td><b>Common enemy</b> (originally anti-communism)</td><td>"Us vs. them" fear narratives build public support. Today: terrorism, crime.</td><td>Post-9/11 "War on Terror" framing: Western democracies vs. terrorists.</td></tr>
+        </table></div>
+        <div class="key">The result is a narrow range of debate that supports the existing power structure instead of genuine democratic discussion. (Clip: <i>War Made Easy</i>.)</div>
+      </article>
+      <article class="note" id="u1-bias">
+        <h2>Our own personal biases</h2>
+        <ul>
+          <li><b>Bias:</b> a tendency to believe some people, ideas, etc. are better than others, often leading to unfair treatment.</li>
+          <li><b>Explicit bias:</b> attitudes and beliefs we hold <i>consciously</i> and deliberately express.</li>
+          <li><b>Implicit bias:</b> attitudes that operate <i>outside our conscious awareness</i>. Everyone has them, even judges and journalists, but they can be worked on and changed. Explicit and implicit biases can contradict each other.</li>
+          <li><b>Confirmation bias:</b> favouring information that confirms what we already believe and discounting information that disagrees.</li>
+          <li><b>Availability bias:</b> thinking examples that come easily to mind are more common or representative than they really are.</li>
+          <li><b>Negativity bias:</b> negative things affect us more than neutral or positive things of equal intensity.</li>
+        </ul>
+        <p class="muted">Documentary study: <i>Control Room</i>, about Al Jazeera's and U.S. media's very different coverage of the 2003 Iraq War, a real case of encoding, sourcing and perspective.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= UNIT 2 ================= -->
+<section class="view" id="unit2">
+  <span class="pill u2">Unit 2</span>
+  <h1>Conflict &amp; Cooperation</h1>
+  <p class="muted">Power, identity and nuclear deterrence. Core question: <b>Is conflict inevitable in an anarchic world, or can cooperation and institutions restrain power?</b></p>
+  <div class="notes-layout">
+    <aside class="toc"><b>On this page</b>
+      <a href="#u2-causes">Causes of conflict</a>
+      <a href="#u2-russia">Russia–Ukraine</a>
+      <a href="#u2-israel">Israel–Palestine &amp; identity</a>
+      <a href="#u2-enviro">Environment &amp; climate</a>
+      <a href="#u2-decline">Decline of war &amp; End of History</a>
+      <a href="#u2-power">Soft vs hard power</a>
+      <a href="#u2-terror">Terrorism</a>
+      <a href="#u2-game">Game theory</a>
+      <a href="#u2-nuclear">Nuclear weapons debate</a>
+      <a href="#u2-ir">Realism vs liberalism</a>
+      <a href="#u2-un">The United Nations</a>
+    </aside>
+    <div>
+      <article class="note" id="u2-causes">
+        <h2>Causes of conflict</h2>
+        <p>First question to ask: is it a <b>war of choice</b> (a state chooses to fight when it doesn't have to) or a <b>war of necessity</b> (fought because a state feels it has no alternative, e.g., self-defence)?</p>
+        <div class="who">
+          <div><b>Power &amp; security</b>Countries seek security, power and influence.</div>
+          <div><b>Economic interests &amp; resources</b>Oil and natural gas, minerals, water, fertile land.</div>
+          <div><b>Identity, nationalism &amp; religion</b>Ethnic differences, religious beliefs, language, national identity.</div>
+          <div><b>Environmental &amp; demographic pressures</b>Rapid population growth strains jobs, infrastructure and political systems.</div>
+          <div><b>Political systems &amp; leadership</b>Authoritarian regimes may use conflict to distract from domestic problems, use nationalism to build unity, or suppress dissent through external confrontation.</div>
+          <div><b>Historical grievances &amp; revenge</b>Colonial-era borders, wars that ended without reconciliation, generations raised with collective memories of injustice.</div>
+        </div>
+        <div class="key">Wars rarely have just one cause. Most have multiple, layered causes.</div>
+        <p><b>Security dilemma:</b> when actions a state takes to increase its own security cause reactions from other states, which end up <i>decreasing</i> the original state's security. (Example: NATO expansion feels defensive to members but threatening to Russia; arms races.)</p>
+      </article>
+
+      <article class="note" id="u2-russia">
+        <h2>Case study: Russian invasion of Ukraine (power &amp; security)</h2>
+        <blockquote>"Getting inside Putin's head demands the skills not only of a psychologist and historian but of a geographer… it is maps, not history books, that keep him up at night." (Tim Marshall, <i>Prisoners of Geography</i>)</blockquote>
+        <ul>
+          <li><b>History:</b> the Soviet Union (1922–1991) and the Cold War split of NATO vs the Warsaw Pact. Since 1991, many former Warsaw Pact and Soviet states have joined NATO, so Russia has lost its <b>buffer zone</b>.</li>
+          <li><b>Geography:</b> the <b>North European Plain</b> is flat with few natural barriers (mountains, etc.), an easy invasion route toward Moscow. Russia has historically wanted buffer territory there.</li>
+          <li><b>Energy:</b> Russia is a global energy superpower: the <b>2nd-largest oil exporter</b> and holder of the <b>largest natural gas reserves</b> in the world. Pipelines like <b>Nord Stream</b> gave it leverage over Europe.</li>
+          <li><b>Ukraine as "Europe's next petrostate"?</b> Ukraine has the <b>14th-largest gas reserves</b> (much in the Black Sea / near Crimea). It lacked the money and technology to develop them, but with Western partners it could become Europe's 2nd-largest petroleum exporter, threatening Russia's wealth and power and making NATO membership more possible.</li>
+          <li><b>Politics:</b> <b>Yanukovych</b> (2010–2014) rejected an EU deal and aligned with Russia → mass protests → <b>Poroshenko</b> (2014–2019) steered Ukraine toward the EU. Putin responded by <b>annexing Crimea in 2014</b>.</li>
+        </ul>
+        <h3>A layered conflict</h3>
+        <div class="tablewrap"><table>
+          <tr><th>Layer</th><th>Explanation</th></tr>
+          <tr><td><b>Core: Power &amp; Security</b></td><td>NATO expansion + loss of buffer zone → Russia fears strategic vulnerability.</td></tr>
+          <tr><td>Amplified by <b>Geography</b></td><td>Flat North European Plain = little natural defence.</td></tr>
+          <tr><td>Amplified by <b>Identity</b></td><td>Ukraine turning toward Europe and away from Russian influence.</td></tr>
+          <tr><td>Amplified by <b>Energy &amp; Economics</b></td><td>Black Sea oil and gas = wealth, leverage and power in Europe.</td></tr>
+        </table></div>
+      </article>
+
+      <article class="note" id="u2-israel">
+        <h2>Case study: Israel–Palestine (identity)</h2>
+        <p><i>What happens when two groups both see the same land as central to who they are?</i></p>
+        <div class="who">
+          <div><b>Israeli national identity</b>Jewish self-determination after centuries of persecution, culminating in the Holocaust.</div>
+          <div><b>Palestinian national identity</b>Indigenous national identity tied to the land, displacement in 1948, and statelessness.</div>
+        </div>
+        <h3>Timeline</h3>
+        <ul>
+          <li><b>Late 1800s–early 1900s:</b> increased Jewish immigration due to <b>Zionism</b>, a movement to establish a Jewish homeland. Critics (especially Arab/Palestinian perspectives) argue it was a colonialist movement that displaced the Indigenous population.</li>
+          <li><b>After WWI:</b> the <b>British Mandate for Palestine</b> (League of Nations). Tensions rose between Jewish and Arab communities.</li>
+          <li><b>1947:</b> after the Holocaust raised international sympathy, the <b>UN voted to partition</b> Palestine. Palestinians rejected it as unfair: <b>55% of the land to Jews, who were ~30% of the population</b>.</li>
+          <li><b>1948:</b> Israel declares independence → Arab states invade → Israel wins. Hundreds of thousands of Palestinians are displaced or expelled: the <b>Nakba</b> ("catastrophe"). Many become refugees.</li>
+          <li><b>1967 Six-Day War:</b> Israel occupies the <b>West Bank (incl. East Jerusalem), Gaza Strip, Sinai Peninsula and Golan Heights</b>. Settlements in the West Bank are considered illegal under international law; restrictions on movement; land confiscation.</li>
+          <li><b>Palestinian resistance:</b> armed struggle, political activism, nonviolent resistance. <b>PLO</b> = secular, recognized Israel in 1993. <b>Hamas</b> = Islamist, does NOT recognize Israel.</li>
+        </ul>
+        <h3>Social identity theory</h3>
+        <p>People get part of their identity and self-esteem from their groups ("I am Jewish / Palestinian / Israeli / part of X nation"). Group identity becomes personal identity.</p>
+        <div class="chain"><span>1. Social categorization: sort people into in-group / out-group</span><i>→</i><span>2. Social identification: adopt the group's narratives, values, memory</span><i>→</i><span>3. Social comparison: want our group to feel legitimate, secure, morally justified</span></div>
+        <ul>
+          <li>If your group identity includes centuries of persecution, exile, genocide → <b>threat perception becomes heightened</b>.</li>
+          <li>If it includes displacement, occupation, statelessness → <b>injustice becomes central to identity</b>.</li>
+        </ul>
+        <h3>Why identity conflicts are harder to resolve</h3>
+        <p>Conflicts over territory, resources or power are about <b>material interests</b>: you can split land, share resources, sign treaties, adjust borders. When conflict is about identity, compromise can feel like losing your culture, betraying your religion, abandoning historical claims or dishonouring past suffering. The conflict becomes <b>existential, not just strategic</b>.</p>
+        <div class="key">You can negotiate over how much land you control. It is much harder to negotiate over who you are.</div>
+      </article>
+
+      <article class="note" id="u2-enviro">
+        <h2>Environmental stress &amp; climate change</h2>
+        <p><b>Thomas Homer-Dixon:</b> with a population over 8 billion and a growing global economy, the world faces growing scarcity of renewable resources like <b>cropland, fresh water and forests</b>. Environmental degradation leads to:</p>
+        <div class="chain"><span>Decreased agricultural production</span><i>→</i><span>Economic decline</span><i>→</i><span>Population displacement</span><i>→</i><span>Weakened institutions &amp; ethnic tension</span><i>→</i><span>Conflict</span></div>
+        <blockquote>"…mass migrations of people into a region may disrupt labor markets, shift class relations, and upset the traditional balance of economic and political authority between ethnic groups."</blockquote>
+        <ul>
+          <li><b>Pressure points:</b> migration (e.g., Mediterranean migrant crossings), most of the world's largest cities sit on coasts (sea-level rise), the Arctic opening up (Russia and China pushing claims), and the <b>water–food–energy nexus</b> (rising demand for water ~40%, food ~35%, energy ~50%).</li>
+          <li><b>Threat multiplier:</b> climate change doesn't directly cause war, but it <b>makes existing problems worse</b> (poverty, weak government, ethnic tension), pushing fragile places over the edge.</li>
+        </ul>
+        <h3>Syria</h3>
+        <p>1970s–1990s farming policies drained groundwater → severe <b>drought (about 2006–2010)</b>, winter 2007–08 the driest on record → crop failures, food prices doubled, ~1.5 million rural people moved to cities alongside Iraqi refugees → unemployment, anger at the Assad regime → <b>uprising in March 2011</b>.</p>
+        <blockquote>"We're not saying drought caused the war. We're saying that added to all the other stressors, it helped kick things over the threshold into open conflict." (Prof. Richard Seager, Columbia University)</blockquote>
+      </article>
+
+      <article class="note" id="u2-decline">
+        <h2>Why has large-scale war become less common?</h2>
+        <p>Data shows battle deaths dropped after WWII, and the share of years in which the Great Powers fought each other fell from nearly 100% (1500s–1600s) to almost zero since 1953. Reasons covered:</p>
+        <ul>
+          <li><b>Economic interdependence:</b> global trade has exploded, so war is too costly when your enemy is also your customer and supplier.</li>
+          <li><b>Spread of democracy:</b> far more people live in democracies now, and democracies rarely fight each other (democratic peace theory).</li>
+          <li><b>Nuclear deterrence:</b> mutually assured destruction makes Great Power war suicidal.</li>
+          <li><b>International institutions &amp; globalization:</b> the UN, trade bodies and global communication create ways to solve disputes peacefully.</li>
+          <li><b>Rising prosperity:</b> GDP per capita has grown massively, and wealthy societies have more to lose.</li>
+        </ul>
+        <h3>Fukuyama's "End of History"</h3>
+        <ul>
+          <li>Francis Fukuyama argued that after the Cold War, <b>liberal democracy</b> had emerged as the final form of government. "History," as the clash of grand ideologies, was over.</li>
+          <li>Monarchy, fascism and communism had been defeated, ideologically and practically; democracy, free markets and human rights were spreading.</li>
+          <li><b>Challenge: is this the end of the "End of History"?</b> Rising authoritarianism: China (Xi Jinping), Russia (Putin), Turkey (Erdoğan), Hungary (Orbán), Venezuela (Maduro). Conflicts this unit (Ukraine, Gaza, Syria) also challenge his idea.</li>
+        </ul>
+      </article>
+
+      <article class="note" id="u2-power">
+        <h2>Tools of power: soft vs hard</h2>
+        <div class="who">
+          <div><b>Soft power (attract &amp; persuade)</b>
+            <ul>
+              <li><b>Co-option:</b> potential opponents become closely tied (e.g., Germany and France).</li>
+              <li><b>Golden Arches Theory:</b> two countries with McDonald's don't go to war with each other (trade links).</li>
+              <li><b>Dell Theory:</b> countries in the same global supply chain won't fight each other.</li>
+              <li><b>Public diplomacy:</b> building ongoing positive relationships with foreign publics.</li>
+              <li><b>Government diplomacy:</b> international negotiations.</li>
+            </ul></div>
+          <div><b>Hard power (coerce)</b>
+            <ul>
+              <li><b>Aid payments &amp; bribes:</b> wealthy countries pay poorer ones for support.</li>
+              <li><b>Sanctions:</b> measures by countries or organizations (e.g., UN) to force a policy change.</li>
+              <li><b>Force:</b> war, symmetric (similar militaries) or <b>asymmetric</b> (unequal sides, more common now).</li>
+            </ul></div>
+        </div>
+        <h3>The military-industrial complex</h3>
+        <blockquote>"…we must guard against the acquisition of unwarranted influence… by the military-industrial complex." (President Dwight Eisenhower, 1961)</blockquote>
+        <p>The close connection between government and weapons companies. Critics say it leads to excessive military spending, unnecessary or dangerous weapons, too much corporate influence on policy, and a preference for military over diplomatic solutions.</p>
+      </article>
+
+      <article class="note" id="u2-terror">
+        <h2>Terrorism: 9/11 and beyond</h2>
+        <p>There is <b>no generally accepted definition</b>. Common elements: <b>violence or threat of violence</b>, creating an <b>atmosphere of fear</b>, to <b>coerce</b> others into actions they wouldn't otherwise take. Often called a "<b>tool of the weak</b>".</p>
+        <h3>Freedom fighter or terrorist?</h3>
+        <ul>
+          <li>"One person's terrorist is another person's freedom fighter."</li>
+          <li>In 1988 the U.S. labelled the <b>ANC and Nelson Mandela</b> terrorists. They fought apartheid; Mandela later became president and won the Nobel Peace Prize.</li>
+          <li><b>Osama bin Laden</b> fought the Soviets in Afghanistan in the 1980s and was supported by Western governments as a "good guy".</li>
+          <li>Media framing: critics note the word "terrorism" is applied mostly to non-state and Muslim attackers (Jan. 6 Capitol riot: was it domestic terrorism?).</li>
+        </ul>
+        <h3>What motivates terrorism?</h3>
+        <ul>
+          <li><b>Cultural fanaticism:</b> resisting secularism, believing they are morally right (Taliban, Hezbollah, Timothy McVeigh; Unabomber Ted Kaczynski against industrial society).</li>
+          <li><b>Psychology:</b> personal dissatisfaction, "us vs. them" (Toronto van attack; European recruits).</li>
+          <li><b>Resistance to imperialism</b> (real or perceived): IRA in Ireland; Al-Qaeda vs U.S. involvement in the Middle East.</li>
+          <li><b>Injustice:</b> feeling wronged. <b>Frustration-Aggression Theory</b>: blocked goals → frustration → aggression.</li>
+        </ul>
+        <h3>Why did 9/11 happen?</h3>
+        <ul>
+          <li>Long history of European colonialism; in 1918 the Middle East came under European control; Britain, France and Italy <b>drew borders</b> that caused culture shock and instability.</li>
+          <li>Post-colonial military dictators failed to run economies; the Arab world became the 2nd-poorest region → revolutionary movements.</li>
+          <li><b>Islamism:</b> the political belief that countries should be reorganized to fully follow Islamic law. <b>Jihadists</b> are Muslims who fight on behalf of the faith; <b>secular</b> means not bound by religious rule.</li>
+          <li>Bin Laden believed Western ideals were inappropriate for Muslims. His answer was Islamism. <b>U.S. troops protecting Saudi Arabia in the 1991 Gulf War</b> infuriated him → founded Al-Qaeda, targeting the U.S.</li>
+        </ul>
+        <p class="muted">Related lens: some conflicts are driven by <b>historical grievance, humiliation and revenge</b>.</p>
+      </article>
+
+      <article class="note" id="u2-game">
+        <h2>Game theory</h2>
+        <p><b>Game theory</b> studies how people, countries or companies make decisions when their choices affect each other. The outcome for one player depends on what others do too.</p>
+        <p><b>Rational actors</b> (states, organizations, individuals) consistently act to <b>maximize their own self-interest</b> and anticipate others' responses.</p>
+        <h3>The Prisoner's Dilemma (Liv &amp; Charlie)</h3>
+        <div class="tablewrap"><table>
+          <tr><th>Years in prison (Liv, Charlie)</th><th>Charlie testifies</th><th>Charlie stays silent</th></tr>
+          <tr><th>Liv testifies</th><td>5, 5</td><td>0, 10</td></tr>
+          <tr><th>Liv stays silent</th><td>10, 0</td><td><b>1, 1</b></td></tr>
+        </table></div>
+        <ul>
+          <li>Two choices: <b>cooperate</b> (stay silent) or <b>defect</b> (testify).</li>
+          <li><b>Defection is rational</b> for each individual: whatever the other does, you're better off testifying (0 instead of 1, or 5 instead of 10). You also protect yourself from being betrayed.</li>
+          <li>But if both defect, both get 5 years. <b>Mutual cooperation (1, 1) is better overall</b>.</li>
+          <li>It's a <b>social dilemma</b>: individual interest conflicts with collective well-being. A form of <b>noncooperative</b> game theory.</li>
+        </ul>
+        <h3>Cold War applications</h3>
+        <ul>
+          <li><b>Arms race:</b> "to arm or not to arm". Both sides arming (defecting) is the PD outcome; nuclear warheads peaked in the mid-1980s.</li>
+          <li><b>Cuban Missile Crisis (1962):</b> U.S. choices = air strike or lift blockade; USSR = keep or withdraw missiles. Outcomes: U.S. victory, Soviet victory, compromise, or MAD. <b>Not really a PD</b>, because they <b>changed the rules</b>: they <i>communicated</i>. PDs work because players can't talk.</li>
+          <li><b>Hobbesian trap:</b> preemptive strikes happen out of <b>mutual fear</b> of an imminent attack. Avoided by building <b>trust</b> (e.g., Cuban Missile Crisis communication). <b>MAD</b> = Mutually Assured Destruction.</li>
+        </ul>
+        <h3>Zero-sum vs non-zero-sum</h3>
+        <div class="who">
+          <div><b>Zero-sum</b>One side's gain = the other's loss. E.g., trade wars, arms races, territorial disputes.</div>
+          <div><b>Non-zero-sum</b>All can win (or all can lose). E.g., trade agreements, climate treaties, arms control treaties (NPT).</div>
+        </div>
+        <p><b>Climate change as a PD:</b> every nation benefits if others cut pollution, but each prefers not to cut its own. There are no present-day consequences for defecting, and acting alone can be "political suicide".</p>
+        <h3>The evolution of cooperation</h3>
+        <ul>
+          <li><b>Robert Axelrod</b>, <i>The Evolution of Cooperation</i>: in an <b>iterated (repeated)</b> PD, players meet again, so the "shadow of the future" makes cooperation pay. Reputation and retaliation matter.</li>
+          <li><b>Tit-for-tat</b> (cooperate first, then copy what the other did) won Axelrod's tournaments. Ch. 4 example: "live and let live" truces between enemy soldiers in WWI trenches.</li>
+          <li>Activity: <i>The Evolution of Trust</i> (Nicky Case).</li>
+        </ul>
+      </article>
+
+      <article class="note" id="u2-nuclear">
+        <h2>The nuclear weapons debate</h2>
+        <div class="who">
+          <div><b>Nuclear weapons increase stability</b>
+            <ul>
+              <li><b>Deterrence / MAD:</b> no rational leader starts a war that guarantees their own destruction.</li>
+              <li>No direct war between nuclear powers since 1945; the Cold War stayed "cold".</li>
+              <li>Fits <b>realism</b>: in anarchy, states need the ultimate self-help tool for survival.</li>
+              <li>Forces caution and communication in crises (Cuban Missile Crisis).</li>
+            </ul></div>
+          <div><b>Nuclear weapons are dangerous</b>
+            <ul>
+              <li><b>Accidents, false alarms, miscalculation</b>: one mistake = catastrophe.</li>
+              <li>Assumes leaders are always rational; not guaranteed.</li>
+              <li><b>Proliferation</b> to more states raises risk; possible terrorist access.</li>
+              <li><b>Security dilemma &amp; arms races</b> (Cold War warheads peaked in the 1980s); huge cost (military-industrial complex).</li>
+              <li><b>Hobbesian trap</b>: fear can trigger preemptive strikes.</li>
+            </ul></div>
+        </div>
+        <p>Arms control like the <b>NPT</b> (Non-Proliferation Treaty) is a <b>non-zero-sum</b> attempt to escape the arms-race prisoner's dilemma.</p>
+      </article>
+
+      <article class="note" id="u2-ir">
+        <h2>International relations theory: realism vs liberalism</h2>
+        <h3>Realism: "the world as it is"</h3>
+        <ul>
+          <li><b>Conflict is inevitable</b>; politics is shaped by competition, not cooperation.</li>
+          <li><b>Nation-states are the main actors</b>, acting as <b>unitary, rational actors</b> in their national interest.</li>
+          <li>The system is in <b>anarchy</b>: no world government or "world police", so it's a <b>self-help</b> system.</li>
+          <li>Humans are selfish, power-hungry and mistrustful → arms races, alliances and war.</li>
+          <li><b>Balance of power:</b> if one state gets too strong, others band together to check it (e.g., against Nazi Germany).</li>
+          <li>The highest goal is <b>survival of the state</b>. Actions are judged by the <b>ethics of responsibility</b>, not moral principles. War can be a necessary tool of statecraft.</li>
+          <li><b>Critiques:</b> a <b>self-fulfilling prophecy</b> (assuming distrust causes distrust), too pessimistic, treats the state as one solid unit and ignores other actors and non-survival issues.</li>
+          <li>Example: <b>China's Belt &amp; Road Initiative</b>, using economic investment to extend power and influence.</li>
+        </ul>
+        <h3>Liberalism: "cooperation over conflict"</h3>
+        <ul>
+          <li>Governments should protect individual rights (life, liberty, property); power should be limited and accountable.</li>
+          <li><b>War is not inevitable</b>; cooperation is possible. <b>Militarism is dangerous</b>.</li>
+          <li><b>International institutions</b> (UN, NATO, WTO) help build trust, monitor agreements and solve problems peacefully. The more states cooperate, the less likely they are to defect.</li>
+          <li><b>Interdependence</b> brings peace and prosperity.</li>
+          <li><b>Many actors matter:</b> states, multinational corporations (MNCs), international organizations, even individuals.</li>
+          <li><b>Democratic peace theory:</b> democracies rarely or never go to war with each other.</li>
+        </ul>
+        <div class="tablewrap"><table>
+          <tr><th>Concept</th><th>Realism</th><th>Liberalism</th></tr>
+          <tr><td>Big theme</td><td>Power and survival</td><td>Freedom and cooperation</td></tr>
+          <tr><td>View of the world</td><td>Anarchic, competitive; conflict is inevitable</td><td>Peace is achievable; cooperation is possible</td></tr>
+          <tr><td>Trust between states</td><td>Low; others may cheat, so rely on yourself</td><td>Can be built through trade, institutions, democracy</td></tr>
+          <tr><td>Main goal</td><td>State survival and security, via power</td><td>Peace, prosperity, rights, mutual gains</td></tr>
+          <tr><td>Role of institutions</td><td>Weak; reflect great-power interests</td><td>Central; build trust and enforce rules</td></tr>
+          <tr><td>Key actors</td><td>States only</td><td>States, MNCs, IOs, NGOs, individuals</td></tr>
+          <tr><td>System</td><td>Self-help</td><td>Institutions matter</td></tr>
+        </table></div>
+      </article>
+
+      <article class="note" id="u2-un">
+        <h2>The United Nations: success or struggle?</h2>
+        <p><i>"Should countries have to follow global rules, even if it goes against their national interests?"</i></p>
+        <ul>
+          <li>Created in <b>1945</b> after WWII: <b>51 members → now 193</b>.</li>
+          <li>UN Charter goals: maintain international peace and security, promote human rights, support economic and social development, uphold international law, provide humanitarian aid.</li>
+        </ul>
+        <div class="tablewrap"><table>
+          <tr><th>Organ</th><th>What it is</th></tr>
+          <tr><td>General Assembly</td><td>All 193 members, 1 vote each</td></tr>
+          <tr><td>Security Council</td><td>15 members; <b>5 permanent with veto</b> (P5: U.S., U.K., France, Russia, China)</td></tr>
+          <tr><td>Secretariat</td><td>Day-to-day operations, led by the Secretary-General</td></tr>
+          <tr><td>ICJ, WHO, UNESCO</td><td>Court and specialized agencies</td></tr>
+        </table></div>
+        <p><b>The veto problem:</b> any P5 member can block Security Council action (e.g., vetoes on Syria, Ukraine, Israel–Palestine). Critics say it's undemocratic and protects major powers, showing tension between <b>power and equality</b> in global governance. Realists would say this proves institutions reflect power; liberals argue the UN still matters.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FLASHCARDS ================= -->
+<section class="view" id="flash">
+  <h1>Flashcards</h1>
+  <p class="muted">Click the card (or press <b>Space</b>) to flip. <b>← →</b> to move. Mark cards you know and they'll drop out when "Hide known" is on.</p>
+  <div class="toolbar">
+    <button class="chip" data-deck="all" aria-pressed="true">All</button>
+    <button class="chip" data-deck="1" aria-pressed="false">Unit 1</button>
+    <button class="chip" data-deck="2" aria-pressed="false">Unit 2</button>
+    <select id="topicSel" aria-label="Topic"><option value="">All topics</option></select>
+    <span class="spacer"></span>
+    <button class="chip" id="hideKnown" aria-pressed="false">Hide known</button>
+    <button class="chip" id="reverseBtn" aria-pressed="false">Definition first</button>
+    <button class="chip" id="shuffleBtn">Shuffle</button>
+    <button class="chip" id="resetKnown">Reset progress</button>
+  </div>
+  <div class="fc-stage">
+    <div class="progress"><i id="fcProg"></i></div>
+    <div id="fcArea"></div>
+    <div class="fc-actions" id="fcActions">
+      <button class="btn ghost" id="prevBtn">← Prev</button>
+      <button class="btn warn" id="againBtn">Study again</button>
+      <button class="btn good" id="knowBtn">I know it ✓</button>
+      <button class="btn ghost" id="nextBtn">Next →</button>
+    </div>
+    <div class="fc-count" id="fcCount"></div>
+  </div>
+</section>
+
+<!-- ================= QUIZ ================= -->
+<section class="view" id="quiz">
+  <h1>Quiz</h1>
+  <div class="quiz-box" id="quizBox"></div>
+</section>
+
+<!-- ================= REVIEW SHEET ================= -->
+<section class="view" id="review">
+  <span class="pill u2">Unit 2</span>
+  <h1>Unit 2 Review Sheet</h1>
+  <p class="muted">Every question from the CGW4U Unit 2 review worksheet. Write your own answer first (it saves in this browser), then open the model answer to check. Opinion questions get a sample structure, not "the" answer.</p>
+  <div id="wsArea"></div>
+</section>
+
+</main>
+<footer>World Issues Study Hub · CGW4U · Built from class slides and the Unit 2 review worksheet</footer>
+
+<script>
+/* ---------- safe storage ---------- */
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+
+/* ---------- theme ---------- */
+(function(){const t=store.get('wi-theme',null);if(t)document.documentElement.dataset.theme=t;
+document.getElementById('themeBtn').onclick=()=>{const dark=document.documentElement.dataset.theme?document.documentElement.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;const n=dark?'light':'dark';document.documentElement.dataset.theme=n;store.set('wi-theme',n)}})();
+
+/* ---------- navigation ---------- */
+function show(v){document.querySelectorAll('.view').forEach(s=>s.classList.toggle('active',s.id===v));document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected',t.dataset.view===v));window.scrollTo({top:0});if(location.hash!=='#'+v)history.replaceState(null,'','#'+v);if(v==='home')updateStats()}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>show(t.dataset.view));
+document.querySelectorAll('[data-go]').forEach(c=>c.onclick=()=>show(c.dataset.go));
+document.querySelectorAll('.toc a').forEach(a=>a.onclick=e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})});
+
+/* ---------- FLASHCARD DATA ---------- */
+const CARDS=[
+// Unit 1
+[1,'Perspective','Socio-economic status (SES)','A measure of a person\'s or group\'s position in a community, determined by factors like parents\' occupations, income, education and neighbourhood.'],
+[1,'Perspective','Two sources of perspective','Socio-economic status and life experiences (gender, ethnicity, age, religion, etc.).'],
+[1,'Perspective','Can perspectives change?','Yes. People change their views as they live through new experiences or grow older. People can also be left-wing on one issue and right-wing on another.'],
+[1,'Perspective','3 reasons point of view matters','Better understanding of others\' beliefs and values; conflict resolution; including others (noticing which voices are missing).'],
+[1,'Perspective','Stakeholder','Anyone affected by, or with an interest in, an issue. E.g., Guelph encampments: business owners, downtown citizens, people experiencing homelessness, city council/mayor.'],
+[1,'Empathy','Easy vs hard empathy','Easy: understanding people who think like you. Hard: understanding a perspective you find frustrating, without excusing or agreeing with it.'],
+[1,'Empathy','Strawman argument','Making the other side\'s argument weaker so it\'s easier to attack ("They\'re just stupid"). Happens when we skip hard empathy.'],
+[1,'Empathy','Steelman argument','Explaining the other side\'s argument in its strongest, fairest form, even if you disagree ("The strongest version of their point is…").'],
+[1,'Empathy','Steelmanning is empathy for…','…someone\'s reasoning, not necessarily their conclusion.'],
+[1,'Facts & sources','Fact','Objective, indisputable truth that can be verified by accurate observation and measurement. Personal experience can\'t change it.'],
+[1,'Facts & sources','Opinion','Subjective belief about events, formed when you consider facts in light of your values and perspective.'],
+[1,'Facts & sources','Vertical reading','Judging a source by staying on its own website (about page, design). Easy to be fooled.'],
+[1,'Facts & sources','Lateral reading','Leaving a site and opening other tabs to see what independent sources say about it. This is how fact-checkers work.'],
+[1,'Single story','The single story (Adichie)','When the same story is told over and over about a people or place we don\'t know first-hand. Leads to stereotypes and half-truths.'],
+[1,'Single story','Adichie on power','Power is the ability not just to tell a story but to make it the definitive story.'],
+[1,'Single story','John Locke (1561)','London merchant whose West Africa account described Africans as beasts without houses and "people without heads", an early example of a dehumanizing single story.'],
+[1,'Single story','Rudyard Kipling','British Imperial-era writer whose work portrayed the British Empire as a civilizing force, reflecting the imperialist mindset.'],
+[1,'Media theorists','Edward Said','Palestinian-American critic (1935–2003), author of Orientalism.'],
+[1,'Media theorists','Orientalism','Said\'s idea that Western scholarship and culture portrayed the East as exotic, inferior and "the Other," supporting colonialism and imperialism.'],
+[1,'Media theorists','"The Other"','How media depicts cultures different from the Western perspective, often in stereotyped, biased ways that can cause real-world harm (Said).'],
+[1,'Media theorists','Marshall McLuhan','Media theorist: "The medium is the message." How information is delivered shapes perception more than the content itself.'],
+[1,'Media theorists','"We shape our tools and thereafter our tools shape us."','McLuhan\'s point that media technologies reshape human behaviour and society.'],
+[1,'Media theorists','Social media features that show McLuhan\'s theory','Algorithm-driven feeds; notifications and the "like" button (dopamine/validation); stories and short-form content (shorter attention spans).'],
+[1,'Media theorists','Time to 100M users: telephone vs ChatGPT','Telephone: 75 years. ChatGPT: 2 months. (TikTok: 9 months.)'],
+[1,'Media theorists','Chris Hondros','War photographer. Used to discuss art/photography as a medium that carries emotional impact other media may not (McLuhan).'],
+[1,'Media theorists','Stuart Hall','Cultural theorist known for encoding/decoding: media messages are encoded by producers and decoded differently by audiences.'],
+[1,'Media theorists','Encoding','When producers embed meanings, values and ideologies into content (news, TV, ads).'],
+[1,'Media theorists','Decoding','How audiences interpret media based on their own experiences, social position and culture. Audiences are not passive.'],
+[1,'Media theorists','Dominant (preferred) reading','The audience accepts the message exactly as the producer intended.'],
+[1,'Media theorists','Negotiated reading','The audience partly accepts the message but resists or modifies parts based on their own experience.'],
+[1,'Media theorists','Oppositional reading','The audience rejects the encoded message and interprets it in a completely different or opposite way.'],
+[1,'Media theorists','Gatekeeping / under-reporting','Deciding which stories get covered and which never get told; a way meaning is encoded.'],
+[1,'Media theorists','Noam Chomsky','MIT professor and critic; co-wrote Manufacturing Consent. Media manufactures consent for elite interests.'],
+[1,'Media theorists','Manufacturing Consent','The idea that media doesn\'t inform impartially but manufactures public consent for powerful elites (corporations, government).'],
+[1,'Media theorists','Propaganda model','Media appears independent but functions as a propaganda system serving elites, especially during military conflict.'],
+[1,'Chomsky filters','Filter 1: Ownership','Big profit-driven corporations own media; owners\' interests shape coverage.'],
+[1,'Chomsky filters','Filter 2: Advertising','Media depends on ad revenue, so it avoids stories that upset advertisers.'],
+[1,'Chomsky filters','Filter 3: Sourcing','Reliance on "official" government/corporate sources biases news toward those in power.'],
+[1,'Chomsky filters','Filter 4: Flak','Backlash (lawsuits, boycotts, PR attacks) discourages critical reporting.'],
+[1,'Chomsky filters','Filter 5: Common enemy','Originally anti-communism; now fear-based "us vs. them" narratives (e.g., War on Terror) to build support.'],
+[1,'Bias','Bias','A tendency to believe some people or ideas are better than others, often resulting in unfair treatment.'],
+[1,'Bias','Explicit bias','Attitudes and beliefs we consciously hold and deliberately express.'],
+[1,'Bias','Implicit bias','Attitudes outside our conscious awareness. Everyone has them (even judges and journalists), but they can be changed.'],
+[1,'Bias','Confirmation bias','Favouring information that confirms existing beliefs and discounting info that disagrees.'],
+[1,'Bias','Availability bias','Thinking examples that easily come to mind are more representative or common than they are.'],
+[1,'Bias','Negativity bias','Negative things affect us more than neutral or positive things of equal intensity.'],
+// Unit 2
+[2,'Causes','Unit 2 core question','Is conflict inevitable in an anarchic world, or can cooperation and institutions restrain power?'],
+[2,'Causes','War of choice vs war of necessity','Choice: a state chooses to fight when it doesn\'t have to. Necessity: fought because a state sees no alternative (e.g., self-defence).'],
+[2,'Causes','6 causes of conflict','Power & security; economic interests & resources; identity/nationalism/religion; environmental & demographic pressures; political systems & leadership; historical grievances & revenge.'],
+[2,'Causes','How authoritarian regimes use conflict','To distract from domestic problems, strengthen internal unity through nationalism, and suppress dissent through external confrontation.'],
+[2,'Causes','Historical grievances','Colonial-era borders, wars ended without reconciliation, generations raised with collective memories of injustice → long-term resentment.'],
+[2,'Causes','Security dilemma','When a state\'s actions to increase its own security provoke reactions from others that end up decreasing its security (e.g., NATO expansion vs Russia, arms races).'],
+[2,'Russia–Ukraine','North European Plain','Flat land with few natural barriers, an easy invasion route toward Russia. Explains Russia\'s desire for buffer territory.'],
+[2,'Russia–Ukraine','Buffer zone','Territory between a state and potential enemies. Russia lost its buffer as former Warsaw Pact states joined NATO.'],
+[2,'Russia–Ukraine','Russia as energy superpower','2nd-largest oil exporter; largest natural gas reserves in the world; pipelines like Nord Stream give leverage over Europe.'],
+[2,'Russia–Ukraine','Ukraine as "Europe\'s next petrostate"','14th-largest gas reserves (Black Sea/Crimea). With Western help it could become Europe\'s 2nd-largest petroleum exporter, threatening Russia\'s wealth and enabling NATO membership.'],
+[2,'Russia–Ukraine','Yanukovych → Poroshenko','Yanukovych rejected an EU deal and allied with Russia; mass protests; Poroshenko (2014–19) turned toward the EU; Putin annexed Crimea (2014).'],
+[2,'Russia–Ukraine','Russia–Ukraine layered conflict','Core: power & security (NATO expansion, lost buffer). Amplified by geography, identity (Ukraine turning to Europe) and energy/economics (Black Sea oil & gas).'],
+[2,'Israel–Palestine','Zionism','Late-1800s movement to establish a Jewish homeland in Palestine. Critics call it colonialist for displacing Palestinians.'],
+[2,'Israel–Palestine','British Mandate for Palestine','League of Nations arrangement after WWI; Jewish–Arab tensions escalated under it.'],
+[2,'Israel–Palestine','1947 UN Partition Plan','Split Palestine into Jewish and Arab states. Palestinians rejected it: 55% of the land to Jews, who were ~30% of the population.'],
+[2,'Israel–Palestine','Nakba','"Catastrophe": the 1948 displacement and expulsion of hundreds of thousands of Palestinians during the Arab–Israeli War.'],
+[2,'Israel–Palestine','1967 Six-Day War','Israel occupied the West Bank (incl. East Jerusalem), Gaza, Sinai Peninsula and Golan Heights. West Bank settlements considered illegal.'],
+[2,'Israel–Palestine','PLO vs Hamas','PLO: secular, recognized Israel in 1993. Hamas: Islamist, does NOT recognize Israel.'],
+[2,'Identity','Social identity theory','People derive part of their identity and self-esteem from their groups. Group identity becomes personal identity.'],
+[2,'Identity','3 steps of social identity theory','Social categorization (in-group/out-group) → social identification (adopt group\'s narratives & memory) → social comparison (want group to feel legitimate & justified).'],
+[2,'Identity','In-group / out-group','The group you identify with vs groups you see as "them". Basis of social categorization.'],
+[2,'Identity','Why identity conflicts are harder to solve','Material disputes can be split or traded; identity compromise feels like betraying culture, religion, history or past suffering. The conflict becomes existential, not just strategic.'],
+[2,'Environment','Thomas Homer-Dixon','Argues growing scarcity of renewable resources (cropland, fresh water, forests) causes conflict via falling agriculture, economic decline and displacement.'],
+[2,'Environment','Threat multiplier','Climate change doesn\'t directly cause war but worsens existing stresses (poverty, weak governments, ethnic tension), pushing places into conflict.'],
+[2,'Environment','Syria & drought','Severe drought (~2006–2010) → crop failure, food prices doubled, rural migration to cities → unemployment and anger → 2011 uprising. Drought helped "kick things over the threshold" (Richard Seager).'],
+[2,'Environment','Water–food–energy nexus','Water, food and energy depend on each other; population growth and urbanization push demand for all three up at once.'],
+[2,'Decline of war','Reasons large-scale war has declined','Economic interdependence, spread of democracy (democratic peace), nuclear deterrence, international institutions/globalization, rising prosperity.'],
+[2,'Decline of war','Fukuyama\'s "End of History"','After the Cold War, liberal democracy had won as the final form of government. The clash of grand ideologies was over.'],
+[2,'Decline of war','Challenge to the End of History','Rising authoritarianism: China (Xi), Russia (Putin), Turkey (Erdoğan), Hungary (Orbán), Venezuela (Maduro); plus wars in Ukraine, Gaza, Syria.'],
+[2,'Power','Soft power','Attracting and persuading: co-option, public diplomacy, government diplomacy (negotiations).'],
+[2,'Power','Hard power','Coercion: aid payments and bribes, sanctions, and force (symmetric or asymmetric war).'],
+[2,'Power','Golden Arches Theory','Two countries that both have McDonald\'s won\'t go to war with each other (economic ties prevent conflict).'],
+[2,'Power','Dell Theory','Countries that are part of the same global supply chain won\'t fight each other.'],
+[2,'Power','Sanctions','Measures by countries or organizations (like the UN) against a country to force it to change its policies.'],
+[2,'Power','Asymmetric warfare','War between sides of very unequal strength (e.g., state vs insurgent group), more common today.'],
+[2,'Power','Military-industrial complex','Close ties between government and weapons makers (Eisenhower warning, 1961). Can cause excessive spending and favour military over diplomatic solutions.'],
+[2,'Terrorism','Terrorism (key elements)','No agreed definition. Violence or threat of violence, creating fear, to coerce others. Often a "tool of the weak."'],
+[2,'Terrorism','"One person\'s terrorist is another\'s freedom fighter"','E.g., the U.S. labelled Mandela and the ANC terrorists in 1988; he later won the Nobel Peace Prize.'],
+[2,'Terrorism','4 motivations for terrorism','Cultural fanaticism; psychology (personal dissatisfaction, us vs them); resistance to imperialism; injustice (frustration-aggression).'],
+[2,'Terrorism','Frustration-Aggression Theory','Feeling wronged or blocked from goals produces frustration, which can lead to aggression.'],
+[2,'Terrorism','Islamism','Political belief that countries should be reorganized to fully follow Islamic law and practices.'],
+[2,'Terrorism','Secular','Not subject to or bound by religious rule (e.g., separation of religion from government).'],
+[2,'Terrorism','What angered bin Laden in 1991?','U.S. troops protecting Saudi Arabia during the Gulf War, on land he saw as holy.'],
+[2,'Game theory','Game theory','The study of decision-making when players\' choices affect each other; outcomes depend on what others do too.'],
+[2,'Game theory','Rational actor','A state, organization or individual that consistently acts to maximize self-interest and anticipates others\' responses.'],
+[2,'Game theory','Prisoner\'s Dilemma','Two players can cooperate (stay silent) or defect (testify). Defecting is individually rational, but mutual cooperation gives the best overall result.'],
+[2,'Game theory','Why defect in a PD?','Whatever the other does, you do better by defecting, and it protects you from being betrayed.'],
+[2,'Game theory','Social dilemma','When doing what\'s best for yourself leads to a worse outcome for everyone.'],
+[2,'Game theory','Iterated Prisoner\'s Dilemma','Repeated game. Future interactions, reputation and retaliation make cooperation more likely (Axelrod).'],
+[2,'Game theory','Tit-for-tat','Cooperate first, then copy the other player\'s last move. Won Axelrod\'s tournaments.'],
+[2,'Game theory','Robert Axelrod','Author of The Evolution of Cooperation: cooperation can emerge among self-interested players in repeated games.'],
+[2,'Game theory','Why the Cuban Missile Crisis wasn\'t a true PD','The sides communicated, which changed the rules. PDs depend on players not being able to talk.'],
+[2,'Game theory','Hobbesian trap','Preemptive strikes caused by mutual fear of an imminent attack. Avoided by building trust.'],
+[2,'Game theory','MAD','Mutually Assured Destruction: nuclear war would destroy both sides, so neither attacks.'],
+[2,'Game theory','Zero-sum game','One side\'s gain equals the other\'s loss. E.g., trade wars, arms races, territorial disputes.'],
+[2,'Game theory','Non-zero-sum game','Everyone can win (or lose). E.g., trade agreements, climate treaties, arms control (NPT).'],
+[2,'Game theory','Climate change as a PD','Everyone benefits if others cut emissions, but each prefers not to cut its own. No present penalty for defecting.'],
+[2,'Nuclear','Argument: nukes increase stability','Deterrence/MAD makes war suicidal; no war between nuclear powers since 1945; the Cold War stayed cold.'],
+[2,'Nuclear','Argument: nukes are dangerous','Accidents and miscalculation, irrational leaders, proliferation and terrorism, arms races, Hobbesian-trap preemption.'],
+[2,'Nuclear','NPT','Nuclear Non-Proliferation Treaty: arms control agreement, an example of a non-zero-sum game.'],
+[2,'IR theory','Realism','Conflict is inevitable; states are the main, rational actors in an anarchic, self-help system seeking power and survival.'],
+[2,'IR theory','Anarchy (international)','No world government or "world police" above states. Each state must look out for itself.'],
+[2,'IR theory','Balance of power','States prevent any one country from becoming too powerful by forming alliances to check it (e.g., vs Nazi Germany).'],
+[2,'IR theory','Critiques of realism','Self-fulfilling prophecy; overly pessimistic; treats the state as one unit and ignores other actors and issues.'],
+[2,'IR theory','Ethics of responsibility','Realist view that state actions are judged by results for survival, not by moral principles.'],
+[2,'IR theory','Liberalism','Cooperation is possible; institutions, interdependence, democracy and many actors (MNCs, IOs, individuals) promote peace.'],
+[2,'IR theory','Democratic peace theory','Democracies rarely or never go to war with each other.'],
+[2,'IR theory','China\'s Belt & Road Initiative','Global infrastructure investment used to extend Chinese economic and political influence.'],
+[2,'UN','UN founding & membership','Created in 1945 after WWII; 51 founding members → 193 today.'],
+[2,'UN','UN Security Council','15 members; 5 permanent with veto (P5): U.S., U.K., France, Russia, China.'],
+[2,'UN','The veto problem','Any P5 member can block Security Council action (e.g., on Syria, Ukraine, Israel–Palestine). Critics say it\'s undemocratic and protects major powers.'],
+[2,'UN','General Assembly','All 193 members, one vote each.']
+].map((c,i)=>({id:'c'+i,unit:c[0],topic:c[1],term:c[2],def:c[3]}));
+
+/* ---------- QUIZ DATA: [unit, question, [correct, wrong...], explanation] ---------- */
+const QS=[
+[1,'Which of these is NOT part of socio-economic status?',['Religion','Parents\' occupations','Income','Neighbourhood'],'Religion is a life-experience factor. SES covers occupation, income, education and neighbourhood.'],
+[1,'Explaining the other side\'s argument in its strongest, fairest form is called…',['Steelmanning','Strawmanning','Gatekeeping','Lateral reading'],'A steelman is the strongest version of an opposing view. A strawman weakens it to attack it.'],
+[1,'"They just want to ruin the country." This is an example of…',['A strawman','A steelman','A negotiated reading','Hard empathy'],'It caricatures opponents instead of engaging their real reasoning.'],
+[1,'Hard empathy means…',['Understanding a view you disagree with, without excusing it','Agreeing with whoever you\'re talking to','Understanding people who think like you','Avoiding controversial topics'],'You don\'t have to agree with someone to understand them.'],
+[1,'Facts are ____, opinions are ____.',['Objective; subjective','Subjective; objective','Biased; neutral','Personal; universal'],'Facts can be verified; opinions come from applying your values to facts.'],
+[1,'A fact-checker opens new tabs to see what other sites say about an organization. This is…',['Lateral reading','Vertical reading','Confirmation bias','Encoding'],'Lateral reading looks across sources instead of trusting the site\'s own description.'],
+[1,'According to Adichie, the main danger of a single story is that it…',['Creates stereotypes that are incomplete','Is always completely false','Makes stories too long','Only affects Africa'],'Stereotypes aren\'t necessarily untrue; they\'re incomplete half-truths.'],
+[1,'Adichie says power is the ability to…',['Make one story the definitive story','Censor all media','Write in many languages','Travel freely'],'Power isn\'t just telling a story but making it THE story.'],
+[1,'Edward Said\'s Orientalism argues the West portrayed the East as…',['Exotic, inferior and "the Other"','Technologically superior','Identical to Europe','Politically neutral'],'These portrayals helped justify colonialism and imperialism.'],
+[1,'Which writer reflected the imperialist mindset of the British Empire as a "civilizing" force?',['Rudyard Kipling','Edward Said','Stuart Hall','Chimamanda Adichie'],'Kipling was a prominent writer of the British imperial era.'],
+[1,'"The medium is the message" is associated with…',['Marshall McLuhan','Noam Chomsky','Stuart Hall','Francis Fukuyama'],'McLuhan argued the medium shapes perception more than content.'],
+[1,'Which technology reached 100 million users fastest?',['ChatGPT','TikTok','Facebook','The World Wide Web'],'ChatGPT: 2 months. TikTok: 9 months. Facebook: 4.5 years. WWW: 7 years.'],
+[1,'Algorithm-driven feeds and "like" buttons best illustrate…',['McLuhan\'s idea that the medium shapes behaviour','Chomsky\'s flak filter','Said\'s Orientalism','Dominant reading'],'Platform design itself shapes habits, attention and perception.'],
+[1,'In Stuart Hall\'s theory, producers embedding values into media is called…',['Encoding','Decoding','Gatekeeping','Co-option'],'Producers encode; audiences decode.'],
+[1,'A viewer agrees with parts of a news story but rejects others based on their experience. Hall calls this a…',['Negotiated reading','Dominant reading','Oppositional reading','Preferred reading'],'Negotiated = partial acceptance with modification.'],
+[1,'A viewer rejects an ad\'s message completely and reads it the opposite way. This is a(n)…',['Oppositional reading','Negotiated reading','Dominant reading','Implicit bias'],'Oppositional decoding rejects the intended meaning.'],
+[1,'Chomsky\'s Manufacturing Consent argues the media mainly…',['Serves the interests of powerful elites','Informs citizens impartially','Is controlled by the military by force','Has no effect on public opinion'],'In democracies control is exercised subtly through media, not force.'],
+[1,'A news outlet avoids criticizing fast food because a burger chain buys its ads. Which filter?',['Advertising','Ownership','Sourcing','Common enemy'],'Filter #2: dependence on advertisers.'],
+[1,'War coverage that mostly quotes generals and government officials reflects which filter?',['Sourcing','Flak','Advertising','Ownership'],'Filter #3: reliance on "official" sources.'],
+[1,'An oil company threatens lawsuits after a critical story. Which filter?',['Flak','Common enemy','Ownership','Sourcing'],'Filter #4: flak and fear of backlash.'],
+[1,'Post-9/11 "War on Terror" framing best fits which filter?',['Common enemy','Advertising','Sourcing','Ownership'],'Filter #5 was originally anti-communism, now any "us vs them" fear narrative.'],
+[1,'Biases that operate outside our conscious awareness are…',['Implicit biases','Explicit biases','Opinions','Facts'],'Everyone has implicit biases, even judges and journalists, but they can be changed.'],
+[1,'Thinking plane crashes are common because you remember them vividly is…',['Availability bias','Negativity bias','Confirmation bias','Explicit bias'],'Easily recalled examples feel more common than they are.'],
+[1,'Only following news sources that agree with you shows…',['Confirmation bias','Availability bias','Oppositional reading','Lateral reading'],'Favouring info that confirms existing beliefs.'],
+[1,'Negativity bias means…',['Negative things affect us more than equally intense positive ones','We distrust all media','We dislike other cultures','We forget bad news quickly'],'Bad has a stronger psychological effect than good of equal intensity.'],
+// Unit 2
+[2,'The core question of Unit 2 asks whether conflict is inevitable in an ____ world.',['Anarchic','Democratic','Globalized','Bipolar'],'Anarchy = no world government above states.'],
+[2,'A state builds up its military for defence, its neighbour feels threatened and arms too, leaving the first state less safe. This is…',['The security dilemma','The Hobbesian trap','Balance of power','Democratic peace'],'Actions meant to increase security end up decreasing it.'],
+[2,'Why does the North European Plain matter to Russia?',['It\'s flat with few natural defences, an easy invasion route','It holds most of Russia\'s oil','It\'s Russia\'s only warm-water port','It is mountainous and easy to defend'],'Geography amplifies Russia\'s security fears.'],
+[2,'At the CORE of the Russia–Ukraine layered conflict is…',['Power & security (NATO expansion, lost buffer zone)','Religion','Climate change','Terrorism'],'Geography, identity and energy amplify the core power/security issue.'],
+[2,'Russia has the world\'s largest reserves of…',['Natural gas','Oil','Lithium','Fresh water'],'It\'s also the 2nd-largest oil exporter.'],
+[2,'Why could Ukrainian gas development threaten Russia?',['It could make Ukraine a major exporter, cutting Russia\'s wealth and leverage','It would cause a drought in Russia','It would end the Black Sea Fleet','It would make Ukraine join the Warsaw Pact'],'More wealth and power for Ukraine could also open the door to NATO.'],
+[2,'Russia annexed Crimea in…',['2014','2008','2022','1991'],'After Yanukovych fell and Ukraine turned toward the EU.'],
+[2,'The 1947 UN partition plan gave about ____ of the land to Jews, who were about ____ of the population.',['55%; 30%','30%; 55%','50%; 50%','78%; 22%'],'Palestinians rejected it as unfair.'],
+[2,'The "Nakba" refers to…',['The 1948 displacement of Palestinians','The 1967 Six-Day War','The 1993 Oslo Accords','The founding of Hamas'],'Nakba means "catastrophe".'],
+[2,'Which territories did Israel occupy in the 1967 Six-Day War?',['West Bank, Gaza, Sinai, Golan Heights','Lebanon and Syria','Only Jerusalem','Jordan and Egypt'],'East Jerusalem is part of the West Bank occupation.'],
+[2,'Which statement about the PLO and Hamas is correct?',['PLO is secular and recognized Israel in 1993; Hamas is Islamist and does not','Both recognize Israel','Hamas is secular; the PLO is Islamist','Neither has ever used armed struggle'],'Key distinction for identity/religion in the conflict.'],
+[2,'In social identity theory, sorting people into "us" and "them" is…',['Social categorization','Social comparison','Social identification','Co-option'],'Then we identify with our group and compare it to others.'],
+[2,'Why are identity conflicts harder to resolve than resource conflicts?',['Compromise feels like betraying who you are, making them existential','Identity can be split like land','They have fewer people involved','They are always shorter'],'"You can negotiate over land… much harder to negotiate over who you are."'],
+[2,'Calling climate change a "threat multiplier" means it…',['Worsens existing stresses that can lead to conflict','Directly causes every war','Only affects wealthy countries','Reduces conflict'],'Seager: drought helped "kick things over the threshold" in Syria.'],
+[2,'Homer-Dixon\'s chain from environmental stress to conflict starts with…',['Decreased agricultural production','Nuclear proliferation','Terrorism','Democratic elections'],'Lower agriculture → economic decline → displacement → conflict.'],
+[2,'Which is NOT a reason given for the decline of large-scale war?',['Population growth','Economic interdependence','Spread of democracy','Nuclear deterrence'],'Population growth is a stressor, not a peace factor.'],
+[2,'Fukuyama\'s "End of History" claimed…',['Liberal democracy was the final form of government after the Cold War','War would end forever','Communism would win','History classes were unnecessary'],'"History" meant the clash of grand ideologies.'],
+[2,'Rising authoritarianism in Russia, China and Hungary is used to…',['Challenge Fukuyama\'s End of History','Support democratic peace theory','Prove the Golden Arches theory','Explain Orientalism'],'If democracy has "won," why is authoritarianism growing?'],
+[2,'Which is an example of SOFT power?',['Public diplomacy','Sanctions','Military force','Bribes'],'Soft power attracts and persuades rather than coerces.'],
+[2,'The "Dell Theory" says countries won\'t fight if they…',['Share a global supply chain','Both have nuclear weapons','Are both democracies','Are in the UN'],'Related: Golden Arches theory (McDonald\'s).'],
+[2,'Who warned about the "military-industrial complex"?',['Dwight Eisenhower','John F. Kennedy','Noam Chomsky','Vladimir Putin'],'Eisenhower\'s 1961 farewell address.'],
+[2,'Which is a common element of definitions of terrorism?',['Creating fear to coerce others','Being carried out by a government army','Having no political goal','Always being religious'],'Violence or threat, fear, coercion; often a "tool of the weak."'],
+[2,'Nelson Mandela was once labelled a terrorist by the U.S. This illustrates…',['"One person\'s terrorist is another person\'s freedom fighter"','The security dilemma','Frustration-aggression theory','The Dell theory'],'He later became president and won the Nobel Peace Prize.'],
+[2,'Frustration-Aggression Theory links terrorism to…',['Feeling wronged or blocked, which leads to aggression','Economic interdependence','Media ownership','Nuclear deterrence'],'Listed under the "injustice" motivation.'],
+[2,'What event in 1991 infuriated Osama bin Laden?',['U.S. troops protecting Saudi Arabia in the Gulf War','The fall of the Berlin Wall','The Oslo Accords','The invasion of Afghanistan'],'He saw U.S. presence there as unacceptable, leading to Al-Qaeda targeting the U.S.'],
+[2,'In the Prisoner\'s Dilemma (5,5 / 0,10 / 10,0 / 1,1), the best outcome for BOTH together is…',['Both stay silent (1,1)','Both testify (5,5)','One testifies, one is silent','There is no best outcome'],'Mutual cooperation minimizes total years.'],
+[2,'Why is defection "rational" in a one-time Prisoner\'s Dilemma?',['You do better by defecting no matter what the other does','It always leads to the best group outcome','Players can talk to each other','It is required by law'],'That\'s why rational players end up at (5,5).'],
+[2,'What makes cooperation more likely in an iterated Prisoner\'s Dilemma?',['Future interactions mean reputation and retaliation matter','Players can never see results','The game ends after one round','Payoffs become zero-sum'],'Axelrod: the "shadow of the future"; tit-for-tat works.'],
+[2,'Why was the Cuban Missile Crisis "not really" a Prisoner\'s Dilemma?',['The sides communicated, changing the rules','Only one side had missiles','Neither side was rational','The UN decided the outcome'],'PDs depend on players being unable to talk.'],
+[2,'A preemptive strike out of mutual fear of being attacked first is the…',['Hobbesian trap','Security dilemma','Dell theory','Balance of power'],'Avoided by building trust.'],
+[2,'Which is a NON-zero-sum example?',['A climate treaty','An arms race','A territorial dispute','A trade war'],'Everyone can gain from cooperation.'],
+[2,'Climate change is like a Prisoner\'s Dilemma because…',['Everyone benefits if others cut emissions, but each prefers not to cut their own','Only one country pollutes','Defecting is punished immediately','It\'s a zero-sum game'],'No present consequences for defecting.'],
+[2,'Which is an argument that nuclear weapons INCREASE stability?',['MAD makes war between nuclear powers suicidal','Accidents can happen','Proliferation to more states','Terrorists may get them'],'The other three are arguments that nukes are dangerous.'],
+[2,'Realists believe the international system is…',['Anarchic and self-help','Governed by a world police','Naturally cooperative','Run by multinational corporations'],'No authority above states, so each must protect itself.'],
+[2,'States forming alliances to stop one country becoming too powerful is…',['Balance of power','Democratic peace','Co-option','Zero-sum'],'E.g., the Allies against Nazi Germany.'],
+[2,'A common critique of realism is that it is…',['A self-fulfilling prophecy','Too optimistic','Focused only on individuals','Opposed to state power'],'Assuming distrust leads states to act in distrustful ways.'],
+[2,'Which belief belongs to LIBERALISM?',['International institutions help build trust and prevent war','Conflict is inevitable','Only states matter','Morality is irrelevant to foreign policy'],'Liberals stress institutions, interdependence and democracy.'],
+[2,'Democratic peace theory states that…',['Democracies rarely go to war with each other','Democracies never go to war','Dictatorships are more peaceful','War spreads democracy'],'A key liberal argument for the decline of war.'],
+[2,'For realists, the highest goal of the state is…',['Survival','Spreading democracy','Protecting human rights','Economic equality'],'Actions judged by the ethics of responsibility.'],
+[2,'How many UN member states are there today?',['193','51','15','5'],'51 founding members in 1945.'],
+[2,'Which is NOT one of the P5 veto powers?',['Germany','China','France','Russia'],'P5: U.S., U.K., France, Russia, China.'],
+[2,'The UN veto is criticized because…',['It lets major powers block action, which is undemocratic','It gives every country equal power','It has never been used','It only applies to the General Assembly'],'E.g., vetoes on Syria, Ukraine, Israel–Palestine.']
+].map((q,i)=>({id:'q'+i,unit:q[0],q:q[1],correct:q[2][0],opts:q[2],exp:q[3]}));
+
+/* ---------- helpers ---------- */
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function updateStats(){document.getElementById('statCards').textContent=CARDS.length;document.getElementById('statQs').textContent=QS.length;document.getElementById('statKnown').textContent=Object.keys(store.get('wi-known',{})).length}
+
+/* ---------- FLASHCARDS ---------- */
+const fc={deck:'all',topic:'',hide:false,rev:false,order:[],i:0,known:store.get('wi-known',{})};
+const topicSel=document.getElementById('topicSel');
+function fillTopics(){const ts=[...new Set(CARDS.filter(c=>fc.deck==='all'||c.unit==fc.deck).map(c=>c.topic))];topicSel.innerHTML='<option value="">All topics</option>'+ts.map(t=>`<option${t===fc.topic?' selected':''}>${esc(t)}</option>`).join('');if(!ts.includes(fc.topic))fc.topic=''}
+function buildDeck(doShuffle){let d=CARDS.filter(c=>(fc.deck==='all'||c.unit==fc.deck)&&(!fc.topic||c.topic===fc.topic)&&(!fc.hide||!fc.known[c.id]));fc.order=doShuffle?shuffle(d):d;fc.i=0;renderCard()}
+function renderCard(){
+  const area=document.getElementById('fcArea'),acts=document.getElementById('fcActions');
+  const total=CARDS.filter(c=>(fc.deck==='all'||c.unit==fc.deck)&&(!fc.topic||c.topic===fc.topic));
+  const knownN=total.filter(c=>fc.known[c.id]).length;
+  document.getElementById('fcProg').style.width=(total.length?knownN/total.length*100:0)+'%';
+  if(!fc.order.length){area.innerHTML=`<div class="empty card"><h3>🎉 Nothing left here</h3><p>You've marked every card in this set as known. Turn off "Hide known" or reset progress to keep practising.</p></div>`;acts.style.display='none';document.getElementById('fcCount').textContent=`${knownN} / ${total.length} known`;return}
+  acts.style.display='';
+  const c=fc.order[fc.i];const front=fc.rev?`<div class="def">${esc(c.def)}</div>`:`<div class="term">${esc(c.term)}</div>`;const back=fc.rev?`<div class="term">${esc(c.term)}</div>`:`<div class="def">${esc(c.def)}</div>`;
+  const meta=`<div class="meta"><span>Unit ${c.unit} · ${esc(c.topic)}</span><span>${fc.known[c.id]?'✓ known':''}</span></div>`;
+  area.innerHTML=`<div class="flip" id="flipEl" tabindex="0" role="button" aria-label="Flip card"><div class="flip-inner"><div class="face">${meta}${front}<div class="hint">click to flip</div></div><div class="face back">${meta}${back}</div></div></div>`;
+  document.getElementById('flipEl').onclick=flip;
+  document.getElementById('fcCount').textContent=`Card ${fc.i+1} of ${fc.order.length} · ${knownN} / ${total.length} known`;
+}
+function flip(){const f=document.getElementById('flipEl');if(f)f.classList.toggle('flipped')}
+function move(d){if(!fc.order.length)return;fc.i=(fc.i+d+fc.order.length)%fc.order.length;renderCard()}
+function mark(k){if(!fc.order.length)return;const c=fc.order[fc.i];if(k)fc.known[c.id]=1;else delete fc.known[c.id];store.set('wi-known',fc.known);
+  if(fc.hide&&k){fc.order.splice(fc.i,1);if(fc.i>=fc.order.length)fc.i=0;renderCard()}else move(1)}
+document.querySelectorAll('[data-deck]').forEach(b=>b.onclick=()=>{fc.deck=b.dataset.deck;document.querySelectorAll('[data-deck]').forEach(x=>x.setAttribute('aria-pressed',x===b));fillTopics();buildDeck(false)});
+topicSel.onchange=()=>{fc.topic=topicSel.value;buildDeck(false)};
+document.getElementById('hideKnown').onclick=e=>{fc.hide=!fc.hide;e.currentTarget.setAttribute('aria-pressed',fc.hide);buildDeck(false)};
+document.getElementById('reverseBtn').onclick=e=>{fc.rev=!fc.rev;e.currentTarget.setAttribute('aria-pressed',fc.rev);renderCard()};
+document.getElementById('shuffleBtn').onclick=()=>buildDeck(true);
+document.getElementById('resetKnown').onclick=()=>{fc.known={};store.set('wi-known',{});buildDeck(false)};
+document.getElementById('prevBtn').onclick=()=>move(-1);
+document.getElementById('nextBtn').onclick=()=>move(1);
+document.getElementById('knowBtn').onclick=()=>mark(true);
+document.getElementById('againBtn').onclick=()=>mark(false);
+document.addEventListener('keydown',e=>{if(!document.getElementById('flash').classList.contains('active'))return;if(['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName))return;
+  if(e.key===' '||e.key==='Enter'){e.preventDefault();flip()}else if(e.key==='ArrowRight')move(1);else if(e.key==='ArrowLeft')move(-1)});
+fillTopics();buildDeck(false);
+
+/* ---------- QUIZ ---------- */
+const qz={unit:'all',count:15,list:[],i:0,score:0,missed:[]};
+const qbox=document.getElementById('quizBox');
+function quizSetup(){
+  const best=store.get('wi-best',null);
+  qbox.innerHTML=`<div class="qcard setup"><h2>Set up your quiz</h2><p class="muted">Multiple choice, instant feedback with explanations. ${QS.length} questions in the bank.</p>
+  <label for="qUnit">Unit</label><select id="qUnit"><option value="all">Both units</option><option value="1">Unit 1: Perspective, Bias &amp; Media</option><option value="2">Unit 2: Conflict &amp; Cooperation</option></select>
+  <label for="qCount">Number of questions</label><select id="qCount"><option>10</option><option selected>15</option><option>25</option><option value="999">All of them</option></select>
+  <div style="margin-top:20px"><button class="btn" id="qStart">Start quiz →</button></div>
+  ${best?`<p class="muted" style="margin-top:14px">Best score so far: <b>${best}%</b></p>`:''}</div>`;
+  document.getElementById('qStart').onclick=()=>{qz.unit=document.getElementById('qUnit').value;qz.count=+document.getElementById('qCount').value;startQuiz(shuffle(QS.filter(q=>qz.unit==='all'||q.unit==qz.unit)).slice(0,qz.count))};
+}
+function startQuiz(list){qz.list=list.map(q=>({...q,shown:shuffle(q.opts)}));qz.i=0;qz.score=0;qz.missed=[];renderQ()}
+function renderQ(){
+  const q=qz.list[qz.i];
+  qbox.innerHTML=`<div class="progress"><i style="width:${qz.i/qz.list.length*100}%"></i></div><div class="qcard"><div class="qtop"><span>Question ${qz.i+1} of ${qz.list.length} · Unit ${q.unit}</span><span>Score: ${qz.score}</span></div>
+  <div class="qtext">${esc(q.q)}</div><div class="opts">${q.shown.map((o,k)=>`<button class="opt" data-o="${esc(o)}"><span class="k">${'ABCD'[k]}</span><span>${esc(o)}</span></button>`).join('')}</div>
+  <div class="explain" id="qExp"></div><div class="qnav"><button class="btn" id="qNext" style="display:none">${qz.i+1<qz.list.length?'Next question →':'See results'}</button></div></div>`;
+  qbox.querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(b));
+  document.getElementById('qNext').onclick=()=>{qz.i++;qz.i<qz.list.length?renderQ():results()};
+}
+function answer(btn){
+  const q=qz.list[qz.i],pick=btn.dataset.o,ok=pick===q.correct;
+  qbox.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(b.dataset.o===q.correct)b.classList.add('correct')});
+  if(ok)qz.score++;else{btn.classList.add('wrong');qz.missed.push({...q,pick})}
+  const ex=document.getElementById('qExp');ex.innerHTML=`<b class="${ok?'ok':'no'}">${ok?'Correct!':'Not quite.'}</b> ${ok?'':'The answer is <b>'+esc(q.correct)+'</b>. '}${esc(q.exp)}`;ex.classList.add('show');
+  document.getElementById('qNext').style.display='';document.getElementById('qNext').focus();
+}
+function results(){
+  const pct=Math.round(qz.score/qz.list.length*100);const best=store.get('wi-best',0);if(pct>best)store.set('wi-best',pct);
+  const msg=pct>=90?'Excellent, you\'re ready.':pct>=75?'Solid! Review the ones you missed.':pct>=50?'Getting there. Hit the notes and flashcards for your weak spots.':'Keep going. Read the notes, then try again.';
+  qbox.innerHTML=`<div class="qcard"><div class="score-big">${pct}%</div><p style="text-align:center">${qz.score} / ${qz.list.length} correct · ${msg}</p>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0">${qz.missed.length?'<button class="btn" id="qRetry">Retry missed ('+qz.missed.length+')</button>':''}<button class="btn ghost" id="qNew">New quiz</button></div>
+  ${qz.missed.length?'<h3>Review what you missed</h3>'+qz.missed.map(m=>`<div class="review-item"><p><b>${esc(m.q)}</b></p><p style="color:var(--bad)">Your answer: ${esc(m.pick)}</p><p style="color:var(--good)">Correct: ${esc(m.correct)}</p><p class="muted">${esc(m.exp)}</p></div>`).join(''):''}</div>`;
+  const r=document.getElementById('qRetry');if(r)r.onclick=()=>startQuiz(shuffle(qz.missed));
+  document.getElementById('qNew').onclick=quizSetup;
+}
+quizSetup();
+
+/* ---------- REVIEW WORKSHEET ---------- */
+const WS=[
+['Part 1: Big Ideas Check',[
+ ['1. Why do conflicts usually have multiple causes rather than just one?','Include at least two different causes (e.g., power, identity, environment).',`<p>Conflicts are complex because several pressures usually build on each other. A conflict often has a <b>core cause</b> that other factors <b>amplify</b>.</p><p>Example: in Russia–Ukraine the core cause is <b>power and security</b> (NATO expansion and loss of a buffer zone), but it's amplified by <b>geography</b> (the flat North European Plain), <b>identity</b> (Ukraine turning toward Europe) and <b>economics</b> (Black Sea gas). In Syria, drought (<b>environment</b>) combined with economic hardship and an authoritarian regime (<b>political system</b>).</p>`],
+ ['2. What is the security dilemma?','Give a definition AND a real-world example.',`<p><b>Definition:</b> a situation where actions a state takes to increase its own security cause reactions from other states, which in turn <b>decrease</b> the original state's security.</p><p><b>Example:</b> NATO expansion eastward was seen by members as defensive, but Russia saw it as a threat and responded aggressively (Crimea 2014, the 2022 invasion), which made Europe less secure. The Cold War nuclear arms race is another example.</p>`],
+ ['3. What is one example of a historical grievance leading to conflict today?','',`<p><b>Israel–Palestine:</b> the 1948 <b>Nakba</b>, when hundreds of thousands of Palestinians were displaced, along with the 1967 occupation, remains central to Palestinian identity, while Jewish memory of centuries of persecution and the Holocaust heightens Israeli threat perception. Neither side's grievance has been reconciled.</p><p>Other options: colonial-era borders in the Middle East and Africa; 9/11 and bin Laden's anger at Western involvement in the Middle East.</p>`],
+ ['4. What does it mean when we say climate change is a "threat multiplier"?','',`<p>Climate change doesn't directly cause war, but it <b>makes existing problems worse</b> (poverty, food and water shortages, weak governments, ethnic tension) and can push an unstable place into conflict. Example: Syria's 2006–2010 drought caused crop failures and migration to cities, adding to anger at the Assad regime before the 2011 uprising. Seager: it "helped kick things over the threshold."</p>`]]],
+['Part 2: Concept Application',[
+ ['6. Explain the Russia–Ukraine conflict using: Power & Security, Geography, Identity, Economics (energy/resources).','',`<ul><li><b>Power &amp; Security (core):</b> after the USSR collapsed, former Warsaw Pact states joined NATO. Russia lost its buffer zone and fears strategic vulnerability if Ukraine joins NATO (security dilemma).</li><li><b>Geography:</b> the flat North European Plain has few natural defences, a historic invasion route to Moscow, so Russia wants buffer territory.</li><li><b>Identity:</b> Ukraine turned toward Europe and away from Russian influence (Yanukovych → protests → Poroshenko); Putin sees Ukraine as part of Russia's sphere.</li><li><b>Economics:</b> Russia is an energy superpower (2nd-largest oil exporter, largest gas reserves; Nord Stream). Ukraine's Black Sea/Crimean gas (14th-largest reserves) could make it a rival exporter, threatening Russia's wealth and leverage. Hence Crimea's annexation in 2014.</li></ul>`],
+ ['7. Why are identity-based conflicts (like Israel–Palestine) harder to resolve than conflicts over land or resources?','Use social identity theory and "in-group" / "out-group".',`<p>According to <b>social identity theory</b>, people draw self-esteem from their groups: they categorize people into an <b>in-group</b> and <b>out-group</b>, identify with their group's narratives and historical memory, and compare their group to others, wanting it to feel legitimate and morally justified.</p><p>Land and resources are material: they can be split, shared or traded. But when the land is tied to identity (Jewish self-determination after persecution vs Palestinian Indigenous identity and displacement), compromise feels like betraying your religion, culture or past suffering. The conflict becomes <b>existential, not strategic</b>. "You can negotiate over how much land you control. It is much harder to negotiate over who you are."</p>`],
+ ['8. Explain how environmental stress could contribute to conflict using the chain: environmental problem → economic impact → social impact → conflict.','Use Syria or your own example.',`<div class="chain"><span>Severe drought 2006–2010 (worsened by climate change &amp; overused groundwater)</span><i>→</i><span>Crop failures, livestock losses, food prices double</span><i>→</i><span>~1.5M rural people move to cities with Iraqi refugees; unemployment, overcrowding, anger at the government</span><i>→</i><span>2011 uprising against Assad → civil war</span></div><p>This matches Homer-Dixon: falling agriculture → economic decline → displacement → weakened institutions and tension.</p>`]]],
+['Part 3: Game Theory',[
+ ['9a. In a Prisoner\'s Dilemma, what are the two choices players can make?','',`<p><b>Cooperate</b> (stay silent) or <b>defect</b> (testify against the other).</p>`],
+ ['9b. Why is defection often the rational choice?','',`<p>Whatever the other player does, you do better by defecting: if they stay silent you go free (0 vs 1 year); if they testify you get 5 instead of 10. You can't communicate or trust the other player, so defecting protects you from being betrayed. A rational actor maximizing self-interest defects.</p>`],
+ ['9c. Why is cooperation better overall?','',`<p>If both cooperate they each get only 1 year (2 total), compared to 5 each (10 total) if both defect. Mutual cooperation is the best collective outcome. That's the <b>social dilemma</b>: individual rationality leads to a worse result for everyone.</p>`],
+ ['10. What changes in an iterated (repeated) Prisoner\'s Dilemma that makes cooperation more likely?','',`<p>Players meet again, so there's a <b>"shadow of the future"</b>: reputation matters, betrayal can be punished next round, and cooperation can be rewarded. Axelrod found <b>tit-for-tat</b> (cooperate first, then copy the other's last move) wins over time. Communication and trust also help, as in the Cuban Missile Crisis.</p>`]]],
+['Part 4: Realism vs Liberalism',[
+ ['11. Fill in the chart: View of the World, Trust between states, Main Goal, Role of Institutions.','',`<div class="tablewrap"><table><tr><th>Concept</th><th>Realism</th><th>Liberalism</th></tr><tr><td>View of the world</td><td>Anarchic and competitive; conflict is inevitable</td><td>Cooperation is possible; peace is achievable</td></tr><tr><td>Trust between states</td><td>Low; self-help, others may cheat</td><td>Can be built through trade, democracy and institutions</td></tr><tr><td>Main goal</td><td>Survival and security through power</td><td>Peace, prosperity, rights and mutual gains</td></tr><tr><td>Role of institutions</td><td>Weak; serve great-power interests (e.g., UN veto)</td><td>Central; build trust, monitor agreements, solve disputes</td></tr></table></div>`],
+ ['12. A country is deciding whether to reduce carbon emissions. What would a realist argue? What would a liberal argue?','',`<ul><li><b>Realist:</b> don't cut unless others do. Cutting emissions could weaken your economy and power relative to rivals (relative gains). With no world government to enforce agreements, others may cheat ("defect"), so protect national interest and survival first.</li><li><b>Liberal:</b> cooperate through institutions and treaties (e.g., climate agreements). It's a <b>non-zero-sum</b> problem: everyone wins from a stable climate. Institutions monitor and build trust, interdependence makes cooperation rational, and NGOs, businesses and citizens can push action.</li></ul>`]]],
+['Part 5: Nuclear Weapons Debate',[
+ ['13. Why do some argue nuclear weapons increase stability?','',`<p><b>Deterrence / MAD:</b> no rational leader would start a war guaranteeing their own destruction. There has been no direct war between nuclear powers since 1945, and the Cold War stayed "cold". Realists see nukes as the ultimate self-help tool for survival in an anarchic system, and crises like Cuba forced leaders to communicate and be cautious.</p>`],
+ ['14. Why do others argue nuclear weapons are dangerous?','',`<p>Deterrence assumes leaders are always rational. <b>Accidents, false alarms and miscalculation</b> could cause catastrophe. <b>Proliferation</b> to more states (and possibly terrorists) multiplies risk. They fuel <b>arms races and the security dilemma</b>, and fear can trigger preemptive strikes (the <b>Hobbesian trap</b>). They also cost enormous sums (military-industrial complex).</p>`],
+ ['15. Which side do YOU agree with and why?','Your opinion: there is no single right answer.',`<p><b>Sample structure:</b> state your position → give your two strongest reasons with evidence (e.g., no Great Power war since 1945, or the Cuban Missile Crisis as a near-miss) → <b>steelman</b> the other side fairly → explain why your side is still more convincing.</p>`]]],
+['Part 6: Decline of War',[
+ ['16. Give TWO reasons why large-scale war has become less common.','',`<ul><li><b>Economic interdependence:</b> global trade ties countries together; war would destroy their own economies (Golden Arches / Dell theories).</li><li><b>Spread of democracy:</b> democracies rarely fight each other (democratic peace theory).</li><li>Also: <b>nuclear deterrence</b>, <b>international institutions</b> like the UN, and <b>rising prosperity</b>.</li></ul>`],
+ ['17. Which reason do you think is the MOST important? Explain.','Your opinion.',`<p><b>Sample:</b> "Nuclear deterrence is most important because Great Power wars stopped almost completely after 1945, exactly when nukes appeared, while trade was also high before WWI and didn't stop that war." Or argue interdependence or democracy with evidence. Acknowledge one counter-argument.</p>`]]],
+['Part 7: Big Thinking Question',[
+ ['18. To what extent is cooperation possible in a world driven by fear and self-interest?','Include game theory, realism vs liberalism, and a real-world example.',`<p><b>Sample thesis:</b> "Cooperation is possible to a significant extent, but only when structures exist that make it in states' self-interest."</p><ul><li><b>Realism:</b> anarchy and fear produce the security dilemma and Hobbesian trap (NATO–Russia, UN Security Council vetoes).</li><li><b>Game theory:</b> one-time PDs predict defection, but in <b>iterated</b> games cooperation emerges through reputation and tit-for-tat (Axelrod).</li><li><b>Liberalism:</b> institutions, trade and democracy turn repeated interactions into stable cooperation (EU, NPT, decline of Great Power war).</li><li><b>Example:</b> Cuban Missile Crisis, where communication turned a potential nuclear war into compromise. Or climate change, where a lack of enforcement keeps cooperation weak.</li><li><b>Conclusion:</b> self-interest doesn't rule out cooperation; it means cooperation must be designed to reward it.</li></ul>`]]]
+];
+(function(){const saved=store.get('wi-ws',{});let h='',n=0;
+WS.forEach(([part,qs])=>{h+=`<h2 class="ws-part">${esc(part)}</h2>`;qs.forEach(([q,p,a])=>{const id='ws'+(n++);h+=`<div class="ws-q"><h4>${esc(q)}</h4>${p?`<p class="prompt">${esc(p)}</p>`:''}<textarea data-id="${id}" placeholder="Write your answer here…">${esc(saved[id]||'')}</textarea><details><summary>Show model answer</summary><div>${a}</div></details></div>`})});
+const area=document.getElementById('wsArea');area.innerHTML=h;
+area.querySelectorAll('textarea').forEach(t=>t.oninput=()=>{const s=store.get('wi-ws',{});s[t.dataset.id]=t.value;store.set('wi-ws',s)});})();
+
+/* ---------- init ---------- */
+updateStats();
+const start=location.hash.slice(1);if(document.getElementById(start)&&document.getElementById(start).classList.contains('view'))show(start);
+</script>
+</body>
+</html>
